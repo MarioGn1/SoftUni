@@ -1,0 +1,11 @@
+C:\Users\User\Desktop\SoftUni Git Homeworks\SoftUni\C# Advanced Homeworks\Songs queue\bin\Debug\netcoreapp2.1\Songs queue.deps.json
+C:\Users\User\Desktop\SoftUni Git Homeworks\SoftUni\C# Advanced Homeworks\Songs queue\bin\Debug\netcoreapp2.1\Songs queue.runtimeconfig.json
+C:\Users\User\Desktop\SoftUni Git Homeworks\SoftUni\C# Advanced Homeworks\Songs queue\bin\Debug\netcoreapp2.1\Songs queue.runtimeconfig.dev.json
+C:\Users\User\Desktop\SoftUni Git Homeworks\SoftUni\C# Advanced Homeworks\Songs queue\bin\Debug\netcoreapp2.1\Songs queue.dll
+C:\Users\User\Desktop\SoftUni Git Homeworks\SoftUni\C# Advanced Homeworks\Songs queue\bin\Debug\netcoreapp2.1\Songs queue.pdb
+C:\Users\User\Desktop\SoftUni Git Homeworks\SoftUni\C# Advanced Homeworks\Songs queue\obj\Debug\netcoreapp2.1\Songs queue.csprojAssemblyReference.cache
+C:\Users\User\Desktop\SoftUni Git Homeworks\SoftUni\C# Advanced Homeworks\Songs queue\obj\Debug\netcoreapp2.1\Songs queue.csproj.CoreCompileInputs.cache
+C:\Users\User\Desktop\SoftUni Git Homeworks\SoftUni\C# Advanced Homeworks\Songs queue\obj\Debug\netcoreapp2.1\Songs queue.AssemblyInfoInputs.cache
+C:\Users\User\Desktop\SoftUni Git Homeworks\SoftUni\C# Advanced Homeworks\Songs queue\obj\Debug\netcoreapp2.1\Songs queue.AssemblyInfo.cs
+C:\Users\User\Desktop\SoftUni Git Homeworks\SoftUni\C# Advanced Homeworks\Songs queue\obj\Debug\netcoreapp2.1\Songs queue.dll
+C:\Users\User\Desktop\SoftUni Git Homeworks\SoftUni\C# Advanced Homeworks\Songs queue\obj\Debug\netcoreapp2.1\Songs queue.pdb

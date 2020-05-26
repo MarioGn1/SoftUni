@@ -1,0 +1,11 @@
+C:\Users\User\Desktop\SoftUni Git Homeworks\SoftUni\C# Advanced Homeworks\Maximum and minimum element\bin\Debug\netcoreapp2.1\Maximum and minimum element.deps.json
+C:\Users\User\Desktop\SoftUni Git Homeworks\SoftUni\C# Advanced Homeworks\Maximum and minimum element\bin\Debug\netcoreapp2.1\Maximum and minimum element.runtimeconfig.json
+C:\Users\User\Desktop\SoftUni Git Homeworks\SoftUni\C# Advanced Homeworks\Maximum and minimum element\bin\Debug\netcoreapp2.1\Maximum and minimum element.runtimeconfig.dev.json
+C:\Users\User\Desktop\SoftUni Git Homeworks\SoftUni\C# Advanced Homeworks\Maximum and minimum element\bin\Debug\netcoreapp2.1\Maximum and minimum element.dll
+C:\Users\User\Desktop\SoftUni Git Homeworks\SoftUni\C# Advanced Homeworks\Maximum and minimum element\bin\Debug\netcoreapp2.1\Maximum and minimum element.pdb
+C:\Users\User\Desktop\SoftUni Git Homeworks\SoftUni\C# Advanced Homeworks\Maximum and minimum element\obj\Debug\netcoreapp2.1\Maximum and minimum element.csprojAssemblyReference.cache
+C:\Users\User\Desktop\SoftUni Git Homeworks\SoftUni\C# Advanced Homeworks\Maximum and minimum element\obj\Debug\netcoreapp2.1\Maximum and minimum element.csproj.CoreCompileInputs.cache
+C:\Users\User\Desktop\SoftUni Git Homeworks\SoftUni\C# Advanced Homeworks\Maximum and minimum element\obj\Debug\netcoreapp2.1\Maximum and minimum element.AssemblyInfoInputs.cache
+C:\Users\User\Desktop\SoftUni Git Homeworks\SoftUni\C# Advanced Homeworks\Maximum and minimum element\obj\Debug\netcoreapp2.1\Maximum and minimum element.AssemblyInfo.cs
+C:\Users\User\Desktop\SoftUni Git Homeworks\SoftUni\C# Advanced Homeworks\Maximum and minimum element\obj\Debug\netcoreapp2.1\Maximum and minimum element.dll
+C:\Users\User\Desktop\SoftUni Git Homeworks\SoftUni\C# Advanced Homeworks\Maximum and minimum element\obj\Debug\netcoreapp2.1\Maximum and minimum element.pdb

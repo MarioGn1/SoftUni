@@ -1,0 +1,11 @@
+C:\Users\User\Desktop\SoftUni Git Homeworks\SoftUni\C# Advanced Homeworks\Basic Queue operations\bin\Debug\netcoreapp2.1\Basic Queue operations.deps.json
+C:\Users\User\Desktop\SoftUni Git Homeworks\SoftUni\C# Advanced Homeworks\Basic Queue operations\bin\Debug\netcoreapp2.1\Basic Queue operations.runtimeconfig.json
+C:\Users\User\Desktop\SoftUni Git Homeworks\SoftUni\C# Advanced Homeworks\Basic Queue operations\bin\Debug\netcoreapp2.1\Basic Queue operations.runtimeconfig.dev.json
+C:\Users\User\Desktop\SoftUni Git Homeworks\SoftUni\C# Advanced Homeworks\Basic Queue operations\bin\Debug\netcoreapp2.1\Basic Queue operations.dll
+C:\Users\User\Desktop\SoftUni Git Homeworks\SoftUni\C# Advanced Homeworks\Basic Queue operations\bin\Debug\netcoreapp2.1\Basic Queue operations.pdb
+C:\Users\User\Desktop\SoftUni Git Homeworks\SoftUni\C# Advanced Homeworks\Basic Queue operations\obj\Debug\netcoreapp2.1\Basic Queue operations.csprojAssemblyReference.cache
+C:\Users\User\Desktop\SoftUni Git Homeworks\SoftUni\C# Advanced Homeworks\Basic Queue operations\obj\Debug\netcoreapp2.1\Basic Queue operations.csproj.CoreCompileInputs.cache
+C:\Users\User\Desktop\SoftUni Git Homeworks\SoftUni\C# Advanced Homeworks\Basic Queue operations\obj\Debug\netcoreapp2.1\Basic Queue operations.AssemblyInfoInputs.cache
+C:\Users\User\Desktop\SoftUni Git Homeworks\SoftUni\C# Advanced Homeworks\Basic Queue operations\obj\Debug\netcoreapp2.1\Basic Queue operations.AssemblyInfo.cs
+C:\Users\User\Desktop\SoftUni Git Homeworks\SoftUni\C# Advanced Homeworks\Basic Queue operations\obj\Debug\netcoreapp2.1\Basic Queue operations.dll
+C:\Users\User\Desktop\SoftUni Git Homeworks\SoftUni\C# Advanced Homeworks\Basic Queue operations\obj\Debug\netcoreapp2.1\Basic Queue operations.pdb

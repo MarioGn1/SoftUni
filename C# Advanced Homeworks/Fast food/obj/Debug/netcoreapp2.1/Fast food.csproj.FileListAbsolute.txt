@@ -1,0 +1,11 @@
+C:\Users\User\Desktop\SoftUni Git Homeworks\SoftUni\C# Advanced Homeworks\Fast food\obj\Debug\netcoreapp2.1\Fast food.csproj.CoreCompileInputs.cache
+C:\Users\User\Desktop\SoftUni Git Homeworks\SoftUni\C# Advanced Homeworks\Fast food\obj\Debug\netcoreapp2.1\Fast food.AssemblyInfoInputs.cache
+C:\Users\User\Desktop\SoftUni Git Homeworks\SoftUni\C# Advanced Homeworks\Fast food\obj\Debug\netcoreapp2.1\Fast food.AssemblyInfo.cs
+C:\Users\User\Desktop\SoftUni Git Homeworks\SoftUni\C# Advanced Homeworks\Fast food\bin\Debug\netcoreapp2.1\Fast food.deps.json
+C:\Users\User\Desktop\SoftUni Git Homeworks\SoftUni\C# Advanced Homeworks\Fast food\bin\Debug\netcoreapp2.1\Fast food.runtimeconfig.json
+C:\Users\User\Desktop\SoftUni Git Homeworks\SoftUni\C# Advanced Homeworks\Fast food\bin\Debug\netcoreapp2.1\Fast food.runtimeconfig.dev.json
+C:\Users\User\Desktop\SoftUni Git Homeworks\SoftUni\C# Advanced Homeworks\Fast food\bin\Debug\netcoreapp2.1\Fast food.dll
+C:\Users\User\Desktop\SoftUni Git Homeworks\SoftUni\C# Advanced Homeworks\Fast food\bin\Debug\netcoreapp2.1\Fast food.pdb
+C:\Users\User\Desktop\SoftUni Git Homeworks\SoftUni\C# Advanced Homeworks\Fast food\obj\Debug\netcoreapp2.1\Fast food.dll
+C:\Users\User\Desktop\SoftUni Git Homeworks\SoftUni\C# Advanced Homeworks\Fast food\obj\Debug\netcoreapp2.1\Fast food.pdb
+C:\Users\User\Desktop\SoftUni Git Homeworks\SoftUni\C# Advanced Homeworks\Fast food\obj\Debug\netcoreapp2.1\Fast food.csprojAssemblyReference.cache

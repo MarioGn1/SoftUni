@@ -1,0 +1,11 @@
+C:\Users\User\Desktop\SoftUni Git Homeworks\SoftUni\C# Advanced Homeworks\Fashion Botique\bin\Debug\netcoreapp2.1\Fashion Botique.deps.json
+C:\Users\User\Desktop\SoftUni Git Homeworks\SoftUni\C# Advanced Homeworks\Fashion Botique\bin\Debug\netcoreapp2.1\Fashion Botique.runtimeconfig.json
+C:\Users\User\Desktop\SoftUni Git Homeworks\SoftUni\C# Advanced Homeworks\Fashion Botique\bin\Debug\netcoreapp2.1\Fashion Botique.runtimeconfig.dev.json
+C:\Users\User\Desktop\SoftUni Git Homeworks\SoftUni\C# Advanced Homeworks\Fashion Botique\bin\Debug\netcoreapp2.1\Fashion Botique.dll
+C:\Users\User\Desktop\SoftUni Git Homeworks\SoftUni\C# Advanced Homeworks\Fashion Botique\bin\Debug\netcoreapp2.1\Fashion Botique.pdb
+C:\Users\User\Desktop\SoftUni Git Homeworks\SoftUni\C# Advanced Homeworks\Fashion Botique\obj\Debug\netcoreapp2.1\Fashion Botique.csprojAssemblyReference.cache
+C:\Users\User\Desktop\SoftUni Git Homeworks\SoftUni\C# Advanced Homeworks\Fashion Botique\obj\Debug\netcoreapp2.1\Fashion Botique.csproj.CoreCompileInputs.cache
+C:\Users\User\Desktop\SoftUni Git Homeworks\SoftUni\C# Advanced Homeworks\Fashion Botique\obj\Debug\netcoreapp2.1\Fashion Botique.AssemblyInfoInputs.cache
+C:\Users\User\Desktop\SoftUni Git Homeworks\SoftUni\C# Advanced Homeworks\Fashion Botique\obj\Debug\netcoreapp2.1\Fashion Botique.AssemblyInfo.cs
+C:\Users\User\Desktop\SoftUni Git Homeworks\SoftUni\C# Advanced Homeworks\Fashion Botique\obj\Debug\netcoreapp2.1\Fashion Botique.dll
+C:\Users\User\Desktop\SoftUni Git Homeworks\SoftUni\C# Advanced Homeworks\Fashion Botique\obj\Debug\netcoreapp2.1\Fashion Botique.pdb

@@ -1,0 +1,11 @@
+C:\Users\User\Desktop\SoftUni Git Homeworks\SoftUni\C# Advanced Homeworks\Balanced Parenthesis\bin\Debug\netcoreapp2.1\Balanced Parenthesis.deps.json
+C:\Users\User\Desktop\SoftUni Git Homeworks\SoftUni\C# Advanced Homeworks\Balanced Parenthesis\bin\Debug\netcoreapp2.1\Balanced Parenthesis.runtimeconfig.json
+C:\Users\User\Desktop\SoftUni Git Homeworks\SoftUni\C# Advanced Homeworks\Balanced Parenthesis\bin\Debug\netcoreapp2.1\Balanced Parenthesis.runtimeconfig.dev.json
+C:\Users\User\Desktop\SoftUni Git Homeworks\SoftUni\C# Advanced Homeworks\Balanced Parenthesis\bin\Debug\netcoreapp2.1\Balanced Parenthesis.dll
+C:\Users\User\Desktop\SoftUni Git Homeworks\SoftUni\C# Advanced Homeworks\Balanced Parenthesis\bin\Debug\netcoreapp2.1\Balanced Parenthesis.pdb
+C:\Users\User\Desktop\SoftUni Git Homeworks\SoftUni\C# Advanced Homeworks\Balanced Parenthesis\obj\Debug\netcoreapp2.1\Balanced Parenthesis.csprojAssemblyReference.cache
+C:\Users\User\Desktop\SoftUni Git Homeworks\SoftUni\C# Advanced Homeworks\Balanced Parenthesis\obj\Debug\netcoreapp2.1\Balanced Parenthesis.csproj.CoreCompileInputs.cache
+C:\Users\User\Desktop\SoftUni Git Homeworks\SoftUni\C# Advanced Homeworks\Balanced Parenthesis\obj\Debug\netcoreapp2.1\Balanced Parenthesis.AssemblyInfoInputs.cache
+C:\Users\User\Desktop\SoftUni Git Homeworks\SoftUni\C# Advanced Homeworks\Balanced Parenthesis\obj\Debug\netcoreapp2.1\Balanced Parenthesis.AssemblyInfo.cs
+C:\Users\User\Desktop\SoftUni Git Homeworks\SoftUni\C# Advanced Homeworks\Balanced Parenthesis\obj\Debug\netcoreapp2.1\Balanced Parenthesis.dll
+C:\Users\User\Desktop\SoftUni Git Homeworks\SoftUni\C# Advanced Homeworks\Balanced Parenthesis\obj\Debug\netcoreapp2.1\Balanced Parenthesis.pdb
