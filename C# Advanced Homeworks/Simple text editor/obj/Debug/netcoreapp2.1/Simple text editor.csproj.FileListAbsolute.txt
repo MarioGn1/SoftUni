@@ -3,7 +3,6 @@ C:\Users\User\Desktop\SoftUni Git Homeworks\SoftUni\C# Advanced Homeworks\Simple
 C:\Users\User\Desktop\SoftUni Git Homeworks\SoftUni\C# Advanced Homeworks\Simple text editor\bin\Debug\netcoreapp2.1\Simple text editor.runtimeconfig.dev.json
 C:\Users\User\Desktop\SoftUni Git Homeworks\SoftUni\C# Advanced Homeworks\Simple text editor\bin\Debug\netcoreapp2.1\Simple text editor.dll
 C:\Users\User\Desktop\SoftUni Git Homeworks\SoftUni\C# Advanced Homeworks\Simple text editor\bin\Debug\netcoreapp2.1\Simple text editor.pdb
-C:\Users\User\Desktop\SoftUni Git Homeworks\SoftUni\C# Advanced Homeworks\Simple text editor\obj\Debug\netcoreapp2.1\Simple text editor.csprojAssemblyReference.cache
 C:\Users\User\Desktop\SoftUni Git Homeworks\SoftUni\C# Advanced Homeworks\Simple text editor\obj\Debug\netcoreapp2.1\Simple text editor.csproj.CoreCompileInputs.cache
 C:\Users\User\Desktop\SoftUni Git Homeworks\SoftUni\C# Advanced Homeworks\Simple text editor\obj\Debug\netcoreapp2.1\Simple text editor.AssemblyInfoInputs.cache
 C:\Users\User\Desktop\SoftUni Git Homeworks\SoftUni\C# Advanced Homeworks\Simple text editor\obj\Debug\netcoreapp2.1\Simple text editor.AssemblyInfo.cs

@@ -3,7 +3,6 @@ C:\Users\User\Desktop\SoftUni Git Homeworks\SoftUni\C# Advanced Homeworks\Crossr
 C:\Users\User\Desktop\SoftUni Git Homeworks\SoftUni\C# Advanced Homeworks\Crossroads\bin\Debug\netcoreapp2.1\Crossroads.runtimeconfig.dev.json
 C:\Users\User\Desktop\SoftUni Git Homeworks\SoftUni\C# Advanced Homeworks\Crossroads\bin\Debug\netcoreapp2.1\Crossroads.dll
 C:\Users\User\Desktop\SoftUni Git Homeworks\SoftUni\C# Advanced Homeworks\Crossroads\bin\Debug\netcoreapp2.1\Crossroads.pdb
-C:\Users\User\Desktop\SoftUni Git Homeworks\SoftUni\C# Advanced Homeworks\Crossroads\obj\Debug\netcoreapp2.1\Crossroads.csprojAssemblyReference.cache
 C:\Users\User\Desktop\SoftUni Git Homeworks\SoftUni\C# Advanced Homeworks\Crossroads\obj\Debug\netcoreapp2.1\Crossroads.csproj.CoreCompileInputs.cache
 C:\Users\User\Desktop\SoftUni Git Homeworks\SoftUni\C# Advanced Homeworks\Crossroads\obj\Debug\netcoreapp2.1\Crossroads.AssemblyInfoInputs.cache
 C:\Users\User\Desktop\SoftUni Git Homeworks\SoftUni\C# Advanced Homeworks\Crossroads\obj\Debug\netcoreapp2.1\Crossroads.AssemblyInfo.cs
