@@ -3,9 +3,9 @@ C:\Users\User\Desktop\SoftUni Git Homeworks\SoftUni\Basic Stack operations\bin\D
 C:\Users\User\Desktop\SoftUni Git Homeworks\SoftUni\Basic Stack operations\bin\Debug\netcoreapp2.1\Basic Stack operations.runtimeconfig.dev.json
 C:\Users\User\Desktop\SoftUni Git Homeworks\SoftUni\Basic Stack operations\bin\Debug\netcoreapp2.1\Basic Stack operations.dll
 C:\Users\User\Desktop\SoftUni Git Homeworks\SoftUni\Basic Stack operations\bin\Debug\netcoreapp2.1\Basic Stack operations.pdb
-C:\Users\User\Desktop\SoftUni Git Homeworks\SoftUni\Basic Stack operations\obj\Debug\netcoreapp2.1\Basic Stack operations.csprojAssemblyReference.cache
 C:\Users\User\Desktop\SoftUni Git Homeworks\SoftUni\Basic Stack operations\obj\Debug\netcoreapp2.1\Basic Stack operations.csproj.CoreCompileInputs.cache
 C:\Users\User\Desktop\SoftUni Git Homeworks\SoftUni\Basic Stack operations\obj\Debug\netcoreapp2.1\Basic Stack operations.AssemblyInfoInputs.cache
 C:\Users\User\Desktop\SoftUni Git Homeworks\SoftUni\Basic Stack operations\obj\Debug\netcoreapp2.1\Basic Stack operations.AssemblyInfo.cs
 C:\Users\User\Desktop\SoftUni Git Homeworks\SoftUni\Basic Stack operations\obj\Debug\netcoreapp2.1\Basic Stack operations.dll
 C:\Users\User\Desktop\SoftUni Git Homeworks\SoftUni\Basic Stack operations\obj\Debug\netcoreapp2.1\Basic Stack operations.pdb
+C:\Users\User\Desktop\SoftUni Git Homeworks\SoftUni\Basic Stack operations\obj\Debug\netcoreapp2.1\Basic Stack operations.csprojAssemblyReference.cache

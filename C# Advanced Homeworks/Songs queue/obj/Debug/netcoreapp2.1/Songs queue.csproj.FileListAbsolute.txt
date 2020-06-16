@@ -8,3 +8,4 @@ C:\Users\User\Desktop\SoftUni Git Homeworks\SoftUni\C# Advanced Homeworks\Songs 
 C:\Users\User\Desktop\SoftUni Git Homeworks\SoftUni\C# Advanced Homeworks\Songs queue\obj\Debug\netcoreapp2.1\Songs queue.AssemblyInfo.cs
 C:\Users\User\Desktop\SoftUni Git Homeworks\SoftUni\C# Advanced Homeworks\Songs queue\obj\Debug\netcoreapp2.1\Songs queue.dll
 C:\Users\User\Desktop\SoftUni Git Homeworks\SoftUni\C# Advanced Homeworks\Songs queue\obj\Debug\netcoreapp2.1\Songs queue.pdb
+C:\Users\User\Desktop\SoftUni Git Homeworks\SoftUni\C# Advanced Homeworks\Songs queue\obj\Debug\netcoreapp2.1\Songs queue.csprojAssemblyReference.cache

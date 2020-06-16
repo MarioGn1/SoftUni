@@ -8,3 +8,4 @@ C:\Users\User\Desktop\SoftUni Git Homeworks\SoftUni\C# Advanced Homeworks\Crossr
 C:\Users\User\Desktop\SoftUni Git Homeworks\SoftUni\C# Advanced Homeworks\Crossroads\obj\Debug\netcoreapp2.1\Crossroads.AssemblyInfo.cs
 C:\Users\User\Desktop\SoftUni Git Homeworks\SoftUni\C# Advanced Homeworks\Crossroads\obj\Debug\netcoreapp2.1\Crossroads.dll
 C:\Users\User\Desktop\SoftUni Git Homeworks\SoftUni\C# Advanced Homeworks\Crossroads\obj\Debug\netcoreapp2.1\Crossroads.pdb
+C:\Users\User\Desktop\SoftUni Git Homeworks\SoftUni\C# Advanced Homeworks\Crossroads\obj\Debug\netcoreapp2.1\Crossroads.csprojAssemblyReference.cache
