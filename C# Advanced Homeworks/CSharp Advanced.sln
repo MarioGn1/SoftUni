@@ -119,17 +119,17 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Defining Classes", "Definin
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DefiningClasses", "DefiningClasses\DefiningClasses.csproj", "{4D9AE781-FAB3-4A61-9731-FFC5A396FA68}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestClasses", "TestClasses\TestClasses.csproj", "{5938145D-72FA-4014-B9E2-4D14277CA421}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestClasses", "TestClasses\TestClasses.csproj", "{5938145D-72FA-4014-B9E2-4D14277CA421}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DateModifier", "DateModifier\DateModifier.csproj", "{63FA8547-309A-4D66-9953-C2BE4F4011B4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DateModifier", "DateModifier\DateModifier.csproj", "{63FA8547-309A-4D66-9953-C2BE4F4011B4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SpeedRacing", "SpeedRacing\SpeedRacing.csproj", "{FA4B521A-3417-48E2-AFF6-889E3482B6DD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SpeedRacing", "SpeedRacing\SpeedRacing.csproj", "{FA4B521A-3417-48E2-AFF6-889E3482B6DD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RawData", "RawData\RawData.csproj", "{159F73BF-FC0A-4E41-AA5C-AC4999324757}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RawData", "RawData\RawData.csproj", "{159F73BF-FC0A-4E41-AA5C-AC4999324757}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CarSalesman", "CarSalesman\CarSalesman.csproj", "{3F47393F-2267-4704-AF24-C949085047FF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CarSalesman", "CarSalesman\CarSalesman.csproj", "{3F47393F-2267-4704-AF24-C949085047FF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PokemonTrainer", "PokemonTrainer\PokemonTrainer.csproj", "{C5580761-8F53-42D0-9781-472DFF80EE46}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PokemonTrainer", "PokemonTrainer\PokemonTrainer.csproj", "{C5580761-8F53-42D0-9781-472DFF80EE46}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
