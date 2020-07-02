@@ -8,4 +8,3 @@ C:\Users\User\Desktop\SoftUni Git Homeworks\SoftUni\C# Advanced Homeworks\test\o
 C:\Users\User\Desktop\SoftUni Git Homeworks\SoftUni\C# Advanced Homeworks\test\obj\Debug\netcoreapp2.1\test.AssemblyInfo.cs
 C:\Users\User\Desktop\SoftUni Git Homeworks\SoftUni\C# Advanced Homeworks\test\obj\Debug\netcoreapp2.1\test.dll
 C:\Users\User\Desktop\SoftUni Git Homeworks\SoftUni\C# Advanced Homeworks\test\obj\Debug\netcoreapp2.1\test.pdb
-C:\Users\User\Desktop\SoftUni Git Homeworks\SoftUni\C# Advanced Homeworks\test\obj\Debug\netcoreapp2.1\test.csprojAssemblyReference.cache

@@ -3,7 +3,6 @@ C:\Users\User\Desktop\SoftUni Git Homeworks\SoftUni\C# Advanced Homeworks\Truck 
 C:\Users\User\Desktop\SoftUni Git Homeworks\SoftUni\C# Advanced Homeworks\Truck tour\bin\Debug\netcoreapp2.1\Truck tour.runtimeconfig.dev.json
 C:\Users\User\Desktop\SoftUni Git Homeworks\SoftUni\C# Advanced Homeworks\Truck tour\bin\Debug\netcoreapp2.1\Truck tour.dll
 C:\Users\User\Desktop\SoftUni Git Homeworks\SoftUni\C# Advanced Homeworks\Truck tour\bin\Debug\netcoreapp2.1\Truck tour.pdb
-C:\Users\User\Desktop\SoftUni Git Homeworks\SoftUni\C# Advanced Homeworks\Truck tour\obj\Debug\netcoreapp2.1\Truck tour.csprojAssemblyReference.cache
 C:\Users\User\Desktop\SoftUni Git Homeworks\SoftUni\C# Advanced Homeworks\Truck tour\obj\Debug\netcoreapp2.1\Truck tour.csproj.CoreCompileInputs.cache
 C:\Users\User\Desktop\SoftUni Git Homeworks\SoftUni\C# Advanced Homeworks\Truck tour\obj\Debug\netcoreapp2.1\Truck tour.AssemblyInfoInputs.cache
 C:\Users\User\Desktop\SoftUni Git Homeworks\SoftUni\C# Advanced Homeworks\Truck tour\obj\Debug\netcoreapp2.1\Truck tour.AssemblyInfo.cs
