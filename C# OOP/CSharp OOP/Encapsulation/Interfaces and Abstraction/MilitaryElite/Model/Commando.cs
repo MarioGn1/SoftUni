@@ -12,7 +12,7 @@ namespace MilitaryElite
             : base(id, firstName, lastName, salary, corps)
         {
             missions = new List<IMission>();
-        }               
+        }
 
         public void Add(IMission mission)
         {
@@ -28,11 +28,7 @@ namespace MilitaryElite
             sb.AppendLine("Missions:");
             foreach (var item in missions)
             {
-                if (item.State == MissionState.inProgress)
-                {
-                    sb.AppendLine($"  {item}");
-                }
-                
+                sb.AppendLine($"  {item}");
             }
             return sb.ToString().TrimEnd();
         }
