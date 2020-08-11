@@ -1,27 +1,27 @@
 ﻿using AquaShop.Models.Aquariums.Contracts;
-using AquaShop.Models.Decorations;
 using AquaShop.Models.Decorations.Contracts;
-using AquaShop.Models.Fish;
 using AquaShop.Models.Fish.Contracts;
+using AquaShop.Utilities.Messages;
 using System;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using System.Linq;
-using System.Runtime.InteropServices.ComTypes;
 using System.Text;
 
 namespace AquaShop.Models.Aquariums
 {
-    internal abstract class Aquarium : IAquarium
+    public abstract class Aquarium : IAquarium
     {
         private string name;
+        private readonly List<IDecoration> decorations;
+        private readonly List<IFish> fishes;
 
         protected Aquarium(string name, int capacity)
         {
-            Name = name;
-            Capacity = capacity;
-            this.Decorations = new List<IDecoration>();
-            this.Fish = new List<IFish>();
+            this.Name = name;
+            this.Capacity = capacity;
+
+            this.decorations = new List<IDecoration>();
+            this.fishes = new List<IFish>();
         }
 
         public string Name
@@ -31,41 +31,39 @@ namespace AquaShop.Models.Aquariums
             {
                 if (string.IsNullOrWhiteSpace(value))
                 {
-                    throw new ArgumentException("Aquarium name cannot be null or empty.");
+                    throw new ArgumentException(ExceptionMessages.InvalidAquariumName);
                 }
                 this.name = value;
             }
 
         }
 
-        public int Capacity { get; private set; }
+        public int Capacity { get;  }
 
-        public int Comfort => CalculateComfort();        
+        public int Comfort => this.decorations.Sum(el => el.Comfort);
 
-        public ICollection<IDecoration> Decorations { get; }
+        public ICollection<IDecoration> Decorations => this.decorations.AsReadOnly();
 
-        public ICollection<IFish> Fish { get; private set; }
-
+        public ICollection<IFish> Fish => this.fishes.AsReadOnly();
 
         public void AddDecoration(IDecoration decoration)
         {
-            this.Decorations.Add(decoration);
+            this.decorations.Add(decoration);
         }
 
         public void AddFish(IFish fish)
         {
-            if (this.Fish.Count >= this.Capacity)
+            if (this.fishes.Count >= this.Capacity)
             {
-                throw new InvalidOperationException("Not enough capacity.");
+                throw new InvalidOperationException(ExceptionMessages.NotEnoughCapacity);
             }
             
-                this.Fish.Add(fish);           
-            
+                this.fishes.Add(fish);
+                                                
         }
 
         public void Feed()
-        {
-            
+        {            
             foreach (var item in Fish)
             {
                 item.Eat();
@@ -77,14 +75,7 @@ namespace AquaShop.Models.Aquariums
             StringBuilder sb = new StringBuilder();
 
             sb.AppendLine($"{this.Name} ({this.GetType().Name}):");
-            if (this.Fish.Count > 0)
-            {
-                sb.AppendLine($"Fish: {string.Join(", ", Fish.Select(el => el.Name))}");                
-            }
-            else
-            {
-                sb.AppendLine("Fish: none");
-            }
+            sb.AppendLine($"Fish: {(this.Fish.Any() ? string.Join(", ", this.Fish.Select(x => x.Name)) : "none")}");
             sb.AppendLine($"Decorations: { Decorations.Count}");
             sb.AppendLine($"Comfort: { this.Comfort}");
 
@@ -93,22 +84,9 @@ namespace AquaShop.Models.Aquariums
 
         public bool RemoveFish(IFish fish)
         {
-            if (this.Fish.Any(el => el.Equals(fish)))
-            {
-                this.Fish.Remove(fish);
-                return true;
-            }
-            return false;
+
+            return this.fishes.Remove(fish);
         }
 
-        private int CalculateComfort()
-        {
-            int sum = 0;
-            foreach (var item in Decorations)
-            {
-                sum += item.Comfort;
-            }
-            return sum;
-        }
     }
 }

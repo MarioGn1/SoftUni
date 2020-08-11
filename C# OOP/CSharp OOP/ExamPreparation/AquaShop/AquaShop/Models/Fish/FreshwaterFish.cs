@@ -6,12 +6,13 @@ using System.Text;
 
 namespace AquaShop.Models.Fish
 {
-    class FreshwaterFish : Fish
+    public class FreshwaterFish : Fish
     {
+        private const int InitialSize = 3;
         
         public FreshwaterFish(string name, string species, decimal price) : base(name, species, price)
         {
-            this.Size = 3;
+            this.Size = InitialSize;
         }
 
         public override void Eat()

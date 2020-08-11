@@ -1,15 +1,15 @@
 ﻿using AquaShop.Models.Fish.Contracts;
+using AquaShop.Utilities.Messages;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace AquaShop.Models.Fish
 {
-    internal abstract class Fish : IFish
+    public abstract class Fish : IFish
     {
         private string name;
-        private string species;
-        private int size;
+        private string species;        
         private decimal price;
 
         protected Fish(string name, string species, decimal price)
@@ -26,7 +26,7 @@ namespace AquaShop.Models.Fish
             {
                 if (string.IsNullOrWhiteSpace(value))
                 {
-                    throw new ArgumentException("Fish name cannot be null or empty.");
+                    throw new ArgumentException(ExceptionMessages.InvalidFishName);
                 }
                 this.name = value;
             }
@@ -40,7 +40,7 @@ namespace AquaShop.Models.Fish
             {
                 if (string.IsNullOrWhiteSpace(value))
                 {
-                    throw new ArgumentException("Fish species cannot be null or empty.");
+                    throw new ArgumentException(ExceptionMessages.InvalidFishSpecies);
                 }
                 this.species = value;
             }
@@ -49,21 +49,18 @@ namespace AquaShop.Models.Fish
 
         public int Size
         {
-            get => this.size;
-            protected set
-            {
-                this.size = value;
-            }
+            get;
+            protected set;            
         }
 
         public decimal Price
         {
-            get => price;
+            get => this.price;
             private set
             {
                 if (value <= 0)
                 {
-                    throw new ArgumentException("Fish price cannot be below or equal to 0.");
+                    throw new ArgumentException(ExceptionMessages.InvalidFishPrice);
                 }
                 this.price = value;
             }

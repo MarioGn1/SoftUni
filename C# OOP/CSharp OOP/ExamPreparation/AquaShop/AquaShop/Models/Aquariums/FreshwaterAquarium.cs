@@ -4,9 +4,10 @@ using System.Text;
 
 namespace AquaShop.Models.Aquariums
 {
-    class FreshwaterAquarium : Aquarium
+    public class FreshwaterAquarium : Aquarium
     {
-        public FreshwaterAquarium(string name) : base(name, 50)
+        private const int defaultCapacity = 50;
+        public FreshwaterAquarium(string name) : base(name, defaultCapacity)
         {
         }
     }

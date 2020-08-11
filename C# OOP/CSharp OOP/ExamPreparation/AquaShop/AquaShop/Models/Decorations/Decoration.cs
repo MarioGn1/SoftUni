@@ -5,7 +5,7 @@ using System.Text;
 
 namespace AquaShop.Models.Decorations
 {
-    internal abstract class Decoration : IDecoration
+    public abstract class Decoration : IDecoration
     {
 
         protected Decoration(int comfort, decimal price)
@@ -13,8 +13,8 @@ namespace AquaShop.Models.Decorations
             Comfort = comfort;
             Price = price;
         }
-        public int Comfort { get; private set; }
+        public int Comfort { get;  }
 
-        public decimal Price { get; private set; }
+        public decimal Price { get;  }
     }
 }

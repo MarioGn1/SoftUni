@@ -2,6 +2,7 @@
 {
     using NUnit.Framework;
     using System;
+    using System.Linq;
 
     [TestFixture]
     public class AquariumsTests
@@ -109,6 +110,111 @@
             int actualCount = aquarium.Count;
 
             Assert.That(actualCount, Is.EqualTo(expectedCount));            
+        }
+
+        [Test]
+        public void AquariumRemoveMethod_Chek_ThrownInvalidOperationException()
+        {
+            string name = "N";
+            Fish fish = new Fish("M");
+            Aquarium aquarium = new Aquarium("A", 2);
+            aquarium.Add(fish);                       
+
+            Assert.That(() => aquarium.RemoveFish(name), Throws.InvalidOperationException.With.Message.EqualTo($"Fish with the name {name} doesn't exist!"));
+        }
+
+        [Test]
+        public void AquariumRemoveMethod_Chek_CorectRemove()
+        {
+            string name = "M";
+            Fish fish = new Fish("M");
+            Aquarium aquarium = new Aquarium("A", 2);
+            aquarium.Add(fish);
+            aquarium.RemoveFish(name);
+
+            int actualAquariumCount = aquarium.Count;
+            int expectedAquariumCount = 0;
+
+            Assert.That(actualAquariumCount, Is.EqualTo(expectedAquariumCount));
+        }
+
+        [Test]
+        public void AquariumRemoveMethod_Chek_CorectRemoveWithMoreThanOneFish()
+        {
+            string name = "M";
+            Fish fish = new Fish("M");
+            Fish fishTwo = new Fish("N");
+            Aquarium aquarium = new Aquarium("A", 2);
+            aquarium.Add(fish);
+            aquarium.Add(fishTwo);
+            aquarium.RemoveFish(name);
+
+            int actualAquariumCount = aquarium.Count;
+            int expectedAquariumCount = 1;
+
+            Assert.That(actualAquariumCount, Is.EqualTo(expectedAquariumCount));
+        }
+
+        [Test]
+        public void AquariumSellFishMethod_Chek_TrownInvalidOperationException()
+        {
+            string name = "N";
+            Fish fish = new Fish("M");
+            
+            Aquarium aquarium = new Aquarium("A", 2);
+            aquarium.Add(fish);            
+
+            Assert.That(() => aquarium.SellFish(name), Throws.InvalidOperationException.With.Message.EqualTo($"Fish with the name {name} doesn't exist!"));
+        }
+
+        [Test]
+        public void AquariumSellFishMethod_Chek_CorrectSell()
+        {
+            string name = "M";
+            Fish fish = new Fish("M");
+
+            Aquarium aquarium = new Aquarium("A", 2);
+            aquarium.Add(fish);
+            aquarium.SellFish(name);
+
+            bool expectedFishStatus = false;
+            bool actualFishStatus = fish.Available;
+
+            Assert.That(actualFishStatus, Is.EqualTo(expectedFishStatus));
+        }
+
+        [Test]
+        public void AquariumSellFishMethod_Chek_CorrectReturn()
+        {
+            string name = "M";
+            Fish fish = new Fish("M");
+
+            Aquarium aquarium = new Aquarium("A", 2);
+            aquarium.Add(fish);
+            Fish requestedFish = aquarium.SellFish(name);
+
+            Fish expectedFishStatus = fish;
+            Fish actualFishStatus = requestedFish;
+
+            Assert.That(actualFishStatus, Is.EqualTo(expectedFishStatus));
+        }
+
+        [Test]
+        public void AquariumReportMethod_Chek_CorrectReturn()
+        {
+            string name = "M";
+            Fish fish = new Fish("M");
+            Fish fishTwo = new Fish("N");
+
+            Aquarium aquarium = new Aquarium("A", 2);
+            aquarium.Add(fish);
+            aquarium.Add(fishTwo);
+            
+
+            string expectedReturn = $"Fish available at A: M, N"; ;
+            string actualReturn = aquarium.Report();
+
+            Assert.That(actualReturn, Is.EqualTo(expectedReturn));
         }
     }
 }

@@ -7,6 +7,7 @@ using AquaShop.Models.Fish;
 using AquaShop.Models.Fish.Contracts;
 using AquaShop.Repositories;
 using AquaShop.Repositories.Contracts;
+using AquaShop.Utilities.Messages;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,7 +17,7 @@ namespace AquaShop.Core
 {
     class Controller : IController
     {
-        private IRepository<Decoration> shopDecorations;
+        private IRepository<IDecoration> shopDecorations;
         private ICollection<IAquarium> shopAquariums;
 
         public Controller()
@@ -30,7 +31,7 @@ namespace AquaShop.Core
         {
             if (aquariumType != "FreshwaterAquarium" && aquariumType != "SaltwaterAquarium")
             {
-                throw new InvalidOperationException("Invalid aquarium type.");
+                throw new InvalidOperationException(ExceptionMessages.InvalidAquariumType);
             }
             else if (aquariumType == "FreshwaterAquarium")
             {
@@ -47,7 +48,7 @@ namespace AquaShop.Core
         {
             if (decorationType != "Plant" && decorationType != "Ornament")
             {
-                throw new InvalidOperationException("Invalid decoration type.");
+                throw new InvalidOperationException(ExceptionMessages.InvalidDecorationType);
             }
             else if (decorationType == "Plant")
             {
@@ -57,6 +58,7 @@ namespace AquaShop.Core
             {
                 shopDecorations.Add(new Ornament());
             }
+            return string.Format(OutputMessages.SuccessfullyAdded, decorationType);
             return $"Successfully added {decorationType}.";
         }
 
@@ -66,11 +68,11 @@ namespace AquaShop.Core
             IFish fish = null;
             if (fishType != "FreshwaterFish" && fishType != "SaltwaterFish")
             {
-                throw new InvalidOperationException("Invalid fish type.");
+                throw new InvalidOperationException(ExceptionMessages.InvalidFishType);
             }
             if ((fishType == "FreshwaterFish" && aquarium.GetType().Name != "FreshwaterAquarium") || (fishType == "SaltwaterFish" && aquarium.GetType().Name != "SaltwaterAquarium"))
             {
-                return "Water not suitable.";
+                return OutputMessages.UnsuitableWater;
             }
             if (fishType == "FreshwaterFish")
             {
@@ -82,6 +84,7 @@ namespace AquaShop.Core
                 fish = new SaltwaterFish(fishName, fishSpecies, price);
                 shopAquariums.FirstOrDefault(el => el.Name == aquariumName).AddFish(fish);
             }
+            //return string.Format(OutputMessages.SuccessfullyAdded, fishType, aquariumName);
             return $"Successfully added {fishType} to {aquariumName}.";
         }
 
@@ -91,12 +94,14 @@ namespace AquaShop.Core
             decimal sumDecors = aquarium.Fish.Sum(el => el.Price);
             decimal sumFishes = aquarium.Decorations.Sum(el => el.Price);
 
+            return string.Format(OutputMessages.AquariumValue, aquariumName, sumDecors + sumFishes);
             return $"The value of Aquarium {aquariumName} is {sumDecors + sumFishes:F2}.";
         }
 
         public string FeedFish(string aquariumName)
         {
             shopAquariums.FirstOrDefault(el => el.Name == aquariumName).Feed();
+            return string.Format(OutputMessages.FishFed, shopAquariums.FirstOrDefault(el => el.Name == aquariumName).Fish.Count);
             return $"Fish fed: { shopAquariums.FirstOrDefault(el => el.Name == aquariumName).Fish.Count}";
 
         }
@@ -111,8 +116,9 @@ namespace AquaShop.Core
             }
             else
             {
-                throw new InvalidOperationException($"There isn't a decoration of type {decorationType}.");
+                throw new InvalidOperationException(string.Format(ExceptionMessages.InexistentDecoration, decorationType));
             }
+            return string.Format(OutputMessages.EntityAddedToAquarium, decorationType, aquariumName);
             return $"Successfully added {decorationType} to {aquariumName}.";
         }
 

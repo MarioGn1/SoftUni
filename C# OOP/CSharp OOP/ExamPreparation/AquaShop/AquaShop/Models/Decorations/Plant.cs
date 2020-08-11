@@ -4,7 +4,7 @@ using System.Text;
 
 namespace AquaShop.Models.Decorations
 {
-    internal class Plant : Decoration
+    public class Plant : Decoration
     {
         private const int PLANT_COMFORT = 5;
         private const decimal PLANT_PRICE = 10;
