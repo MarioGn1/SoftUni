@@ -13,7 +13,7 @@ namespace OnlineShop.Models.Products.Computers
         private readonly List<IComponent> components;
         private readonly List<IPeripheral> peripherals;
 
-        protected Computer(int id, string manufacturer, string model, decimal price, double overallPerformance) 
+        protected Computer(int id, string manufacturer, string model, decimal price, double overallPerformance)
             : base(id, manufacturer, model, price, overallPerformance)
         {
             components = new List<IComponent>();
@@ -24,18 +24,17 @@ namespace OnlineShop.Models.Products.Computers
 
         public IReadOnlyCollection<IPeripheral> Peripherals => peripherals;
 
+
         public override double OverallPerformance
         {
             get
             {
                 if (components.Count == 0)
                 {
-                    return this.OverallPerformance;
+                    return base.OverallPerformance;
                 }
-                else
-                {
-                    return base.OverallPerformance + (components.Sum(el => el.OverallPerformance)/components.Count);
-                }                
+                return base.OverallPerformance + components.Average(el => el.OverallPerformance);
+
             }
         }
         public override decimal Price
@@ -50,7 +49,7 @@ namespace OnlineShop.Models.Products.Computers
 
         public void AddComponent(IComponent component)
         {
-            if (components.Any(el => el.Equals(component)))
+            if (this.components.Any(x => x.GetType().Name == component.GetType().Name))             
             {
                 throw new ArgumentException(string.Format(ExceptionMessages.ExistingComponent, component.GetType().Name, this.GetType().Name, this.Id));
             }
@@ -59,7 +58,7 @@ namespace OnlineShop.Models.Products.Computers
 
         public void AddPeripheral(IPeripheral peripheral)
         {
-            if (peripherals.Any(el => el.Equals(peripheral)))
+            if (this.peripherals.Any(x => x.GetType().Name == peripheral.GetType().Name))            
             {
                 throw new ArgumentException(string.Format(ExceptionMessages.ExistingPeripheral, peripheral.GetType().Name, this.GetType().Name, this.Id));
             }
@@ -69,7 +68,7 @@ namespace OnlineShop.Models.Products.Computers
         public IComponent RemoveComponent(string componentType)
         {
             bool isExist = components.Any(el => el.GetType().Name == componentType);
-            if (components.Count == 0 || !isExist )
+            if (components.Count == 0 || !isExist)
             {
                 throw new ArgumentException(string.Format(ExceptionMessages.NotExistingComponent, componentType, this.GetType().Name, this.Id));
             }
@@ -94,23 +93,20 @@ namespace OnlineShop.Models.Products.Computers
         {
             StringBuilder sb = new StringBuilder();
             sb.AppendLine(base.ToString());
-            sb.AppendLine($" Components ({components.Count}):");
-            foreach (var item in components)
+            sb.AppendLine(string.Format(SuccessMessages.ComputerComponentsToString, components.Count));
+            if (components.Count > 0)
             {
-                sb.AppendLine($"  {item}");
-            }
+                sb.AppendLine("  " + string.Join(Environment.NewLine + "  ", components));
+            }                      
 
             double avrgOP = 0;
             if (peripherals.Count > 0)
             {
-                avrgOP = peripherals.Sum(el => el.OverallPerformance) / peripherals.Count;
+                avrgOP = peripherals.Average(el => el.OverallPerformance);
+                
             }
-            
-            sb.AppendLine($" Peripherals ({peripherals.Count}); Average Overall Performance ({avrgOP:F2}):");
-            foreach (var item in peripherals)
-            {
-                sb.AppendLine($"  {item}");
-            }
+            sb.AppendLine(string.Format(SuccessMessages.ComputerPeripheralsToString, peripherals.Count, avrgOP));            
+            sb.AppendLine("  " + string.Join(Environment.NewLine + "  ", peripherals));            
 
             return sb.ToString().Trim();
         }

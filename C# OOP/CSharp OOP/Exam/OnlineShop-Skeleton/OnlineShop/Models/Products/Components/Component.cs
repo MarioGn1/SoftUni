@@ -1,4 +1,5 @@
-﻿using System;
+﻿using OnlineShop.Common.Constants;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -16,7 +17,7 @@ namespace OnlineShop.Models.Products.Components
 
         public override string ToString()
         {
-            return base.ToString() + $" Generation: {Generation}";
+            return base.ToString() + string.Format(SuccessMessages.ComponentToString, Generation);
         }
     }
 }

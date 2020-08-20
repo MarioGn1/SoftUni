@@ -18,8 +18,8 @@
 
         public const string PeripheralToString = " Connection Type: {0}";
 
-        public const string ComputerComponentsToString = "Components ({0}):";
+        public const string ComputerComponentsToString = " Components ({0}):";
         
-        public const string ComputerPeripheralsToString = "Peripherals ({0}); Average Overall Performance ({1}):";
+        public const string ComputerPeripheralsToString = " Peripherals ({0}); Average Overall Performance ({1}):";
     }
 }

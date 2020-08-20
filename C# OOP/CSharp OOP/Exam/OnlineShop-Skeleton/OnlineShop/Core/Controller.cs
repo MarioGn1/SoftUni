@@ -28,17 +28,18 @@ namespace OnlineShop.Core
         }
         public string AddComponent(int computerId, int id, string componentType, string manufacturer, string model, decimal price, double overallPerformance, int generation)
         {
-            IsExist(computerId);
-            if (computers.First(el => el.Id == computerId).Components.Any(x => x.Id == id))
+            
+            IComputer comp = IsExist(computerId);
+            if (comp.Components.Any(x => x.Id == id))
             {
-                throw new ArgumentException(ExceptionMessages.ExistingComputerId);
+                throw new ArgumentException(ExceptionMessages.ExistingComponentId );
             }
             
             if (!Enum.TryParse(componentType, out ComponentType))
             {
                 throw new ArgumentException(ExceptionMessages.InvalidComponentType);
             }
-            IComputer comp = computers.First(el => el.Id == computerId);
+            
              IComponent component = null;
             switch (ComponentType)
             {
@@ -59,13 +60,11 @@ namespace OnlineShop.Core
                     break;
                 case ComponentType.VideoCard:
                     component = new VideoCard(id, manufacturer, model, price, overallPerformance, generation);
-                    break;
-                default:
-                    break;
+                    break;                
             }
             comp.AddComponent(component);
             components.Add(component);
-                return string.Format(SuccessMessages.AddedComponent, component.GetType().Name, id, computerId);
+                return string.Format(SuccessMessages.AddedComponent, component.GetType().Name, id, comp.Id);
         }
 
         public string AddComputer(string computerType, int id, string manufacturer, string model, decimal price)
@@ -99,8 +98,9 @@ namespace OnlineShop.Core
 
         public string AddPeripheral(int computerId, int id, string peripheralType, string manufacturer, string model, decimal price, double overallPerformance, string connectionType)
         {
-            IsExist(computerId);
-            if (computers.First(el => el.Id == computerId).Peripherals.Any(x => x.Id == id))
+           
+            IComputer comp = IsExist(computerId);
+            if (comp.Peripherals.Any(x => x.Id == id))
             {
                 throw new ArgumentException(ExceptionMessages.ExistingPeripheralId);
             }
@@ -109,7 +109,7 @@ namespace OnlineShop.Core
             {
                 throw new ArgumentException(ExceptionMessages.InvalidPeripheralType);
             }
-            IComputer comp = computers.First(el => el.Id == computerId);
+            
             IPeripheral peripheral = null;
             switch (PeripheralType)
             {
@@ -125,8 +125,6 @@ namespace OnlineShop.Core
                 case PeripheralType.Mouse:
                     peripheral = new Mouse(id, manufacturer, model, price, overallPerformance, connectionType);
                     break;
-                default:
-                    break;
             }
             comp.AddPeripheral(peripheral);
             peripherals.Add(peripheral);
@@ -135,56 +133,54 @@ namespace OnlineShop.Core
 
         public string BuyBest(decimal budget)
         {
-            IComputer comp = computers.Where(el => el.Price <= budget).OrderByDescending(el => el.OverallPerformance).FirstOrDefault();
-            if (comp == null || computers.Count == 0)
+            IComputer comp = computers.OrderByDescending(el => el.OverallPerformance).FirstOrDefault(el => el.Price <= budget);
+            if (comp == null)
             {
                 throw new ArgumentException(string.Format(ExceptionMessages.CanNotBuyComputer, budget));
             }
             computers.Remove(comp);
-            return comp.ToString().Trim();
+            return comp.ToString();
         }
 
         public string BuyComputer(int id)
-        {
-            IsExist(id);
-            IComputer comp= computers.First(el => el.Id == id);
+        {            
+            IComputer comp= IsExist(id);
             computers.Remove(comp);
-            return comp.ToString().Trim();
+            return comp.ToString();
         }
 
         public string GetComputerData(int id)
         {
-            IsExist(id);
-            return computers.First(el => el.Id == id).ToString();
+            IComputer comp = IsExist(id);
+            return comp.ToString();
         }
 
         public string RemoveComponent(string componentType, int computerId)
-        {
-            IsExist(computerId);
-            IComputer comp = computers.First(el => el.Id == computerId);
-            IComponent component = comp.Components.FirstOrDefault(el => el.GetType().Name == componentType);
-            comp.RemoveComponent(componentType);             
+        {            
+            IComputer comp = IsExist(computerId);
+            IComponent component = comp.RemoveComponent(componentType);
+
             components.Remove(component);
-            return string.Format(SuccessMessages.RemovedComponent, componentType, computerId);
+            return string.Format(SuccessMessages.RemovedComponent, componentType, component.Id);
         }
 
         public string RemovePeripheral(string peripheralType, int computerId)
-        {
-            IsExist(computerId);
-            IComputer comp = computers.First(el => el.Id == computerId);
-            IPeripheral peripheral = comp.Peripherals.FirstOrDefault(el => el.GetType().Name == peripheralType);
-            comp.RemovePeripheral(peripheralType); 
+        {            
+            IComputer comp = IsExist(computerId);
+            IPeripheral peripheral = comp.RemovePeripheral(peripheralType);
+
             peripherals.Remove(peripheral);
-            return string.Format(SuccessMessages.RemovedPeripheral, peripheralType, computerId);
+            return string.Format(SuccessMessages.RemovedPeripheral, peripheralType, peripheral.Id);
         }
 
-        public void IsExist(int computerId)
+        public IComputer IsExist(int computerId)
         {
-            bool isExist = computers.Any(el => el.Id == computerId);
-            if (!isExist)
+            IComputer comp = computers.FirstOrDefault(el => el.Id == computerId);
+            if (comp == null)
             {
                 throw new ArgumentException(ExceptionMessages.NotExistingComputerId);
-            }
+            }            
+            return comp;
         }
     }
 }
