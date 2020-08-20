@@ -34,7 +34,7 @@ namespace OnlineShop.Models.Products.Computers
                 }
                 else
                 {
-                    return base.OverallPerformance + (components.Sum(el => el.OverallPerformance))/(components.Count);
+                    return base.OverallPerformance + (components.Sum(el => el.OverallPerformance)/components.Count);
                 }                
             }
         }
@@ -50,7 +50,7 @@ namespace OnlineShop.Models.Products.Computers
 
         public void AddComponent(IComponent component)
         {
-            if (components.Contains(component))
+            if (components.Any(el => el.Equals(component)))
             {
                 throw new ArgumentException(string.Format(ExceptionMessages.ExistingComponent, component.GetType().Name, this.GetType().Name, this.Id));
             }
@@ -59,7 +59,7 @@ namespace OnlineShop.Models.Products.Computers
 
         public void AddPeripheral(IPeripheral peripheral)
         {
-            if (peripherals.Contains(peripheral))
+            if (peripherals.Any(el => el.Equals(peripheral)))
             {
                 throw new ArgumentException(string.Format(ExceptionMessages.ExistingPeripheral, peripheral.GetType().Name, this.GetType().Name, this.Id));
             }
@@ -69,7 +69,7 @@ namespace OnlineShop.Models.Products.Computers
         public IComponent RemoveComponent(string componentType)
         {
             bool isExist = components.Any(el => el.GetType().Name == componentType);
-            if (!isExist || components.Count == 0)
+            if (components.Count == 0 || !isExist )
             {
                 throw new ArgumentException(string.Format(ExceptionMessages.NotExistingComponent, componentType, this.GetType().Name, this.Id));
             }
@@ -81,7 +81,7 @@ namespace OnlineShop.Models.Products.Computers
         public IPeripheral RemovePeripheral(string peripheralType)
         {
             bool isExist = peripherals.Any(el => el.GetType().Name == peripheralType);
-            if (!isExist || peripherals.Count == 0)
+            if (peripherals.Count == 0 || !isExist)
             {
                 throw new ArgumentException(string.Format(ExceptionMessages.NotExistingPeripheral, peripheralType, this.GetType().Name, this.Id));
             }
@@ -99,6 +99,7 @@ namespace OnlineShop.Models.Products.Computers
             {
                 sb.AppendLine($"  {item}");
             }
+
             double avrgOP = 0;
             if (peripherals.Count > 0)
             {

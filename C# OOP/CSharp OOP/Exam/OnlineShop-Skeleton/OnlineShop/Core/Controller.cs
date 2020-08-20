@@ -31,7 +31,7 @@ namespace OnlineShop.Core
             IsExist(computerId);
             if (computers.First(el => el.Id == computerId).Components.Any(x => x.Id == id))
             {
-                throw new ArgumentException(ExceptionMessages.ExistingComponent);
+                throw new ArgumentException(ExceptionMessages.ExistingComputerId);
             }
             
             if (!Enum.TryParse(componentType, out ComponentType))
@@ -63,8 +63,8 @@ namespace OnlineShop.Core
                 default:
                     break;
             }
-            components.Add(component);
             comp.AddComponent(component);
+            components.Add(component);
                 return string.Format(SuccessMessages.AddedComponent, component.GetType().Name, id, computerId);
         }
 
@@ -102,7 +102,7 @@ namespace OnlineShop.Core
             IsExist(computerId);
             if (computers.First(el => el.Id == computerId).Peripherals.Any(x => x.Id == id))
             {
-                throw new ArgumentException(ExceptionMessages.ExistingPeripheral);
+                throw new ArgumentException(ExceptionMessages.ExistingPeripheralId);
             }
             
             if (!Enum.TryParse(peripheralType, out PeripheralType))
@@ -128,20 +128,20 @@ namespace OnlineShop.Core
                 default:
                     break;
             }
-            peripherals.Add(peripheral);
             comp.AddPeripheral(peripheral);
+            peripherals.Add(peripheral);
             return string.Format(SuccessMessages.AddedPeripheral, peripheral.GetType().Name, id, computerId);
         }
 
         public string BuyBest(decimal budget)
         {
-            IComputer comp = computers.OrderByDescending(el => el.OverallPerformance).FirstOrDefault(el => el.Price <= budget);
-            if (comp == null)
+            IComputer comp = computers.Where(el => el.Price <= budget).OrderByDescending(el => el.OverallPerformance).FirstOrDefault();
+            if (comp == null || computers.Count == 0)
             {
                 throw new ArgumentException(string.Format(ExceptionMessages.CanNotBuyComputer, budget));
             }
             computers.Remove(comp);
-            return comp.ToString();
+            return comp.ToString().Trim();
         }
 
         public string BuyComputer(int id)
@@ -149,7 +149,7 @@ namespace OnlineShop.Core
             IsExist(id);
             IComputer comp= computers.First(el => el.Id == id);
             computers.Remove(comp);
-            return comp.ToString();
+            return comp.ToString().Trim();
         }
 
         public string GetComputerData(int id)
@@ -173,7 +173,7 @@ namespace OnlineShop.Core
             IsExist(computerId);
             IComputer comp = computers.First(el => el.Id == computerId);
             IPeripheral peripheral = comp.Peripherals.FirstOrDefault(el => el.GetType().Name == peripheralType);
-            comp.RemovePeripheral(peripheralType); ;
+            comp.RemovePeripheral(peripheralType); 
             peripherals.Remove(peripheral);
             return string.Format(SuccessMessages.RemovedPeripheral, peripheralType, computerId);
         }

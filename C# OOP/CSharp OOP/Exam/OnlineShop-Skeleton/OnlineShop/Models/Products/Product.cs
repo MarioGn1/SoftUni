@@ -75,7 +75,7 @@ namespace OnlineShop.Models.Products
             get { return overallPerformance; }
             private set
             {
-                if (value <= 0)
+                if (value <= 0.0)
                 {
                     throw new ArgumentException(ExceptionMessages.InvalidOverallPerformance);
                 }
@@ -85,7 +85,7 @@ namespace OnlineShop.Models.Products
 
         public override string ToString()
         {
-            return $"Overall Performance: {OverallPerformance:F2}. Price: {Price} - {this.GetType().Name}: {Manufacturer} {Model} (Id: {Id})";
+            return $"Overall Performance: {OverallPerformance:F2}. Price: {Price:F2} - {this.GetType().Name}: {Manufacturer} {Model} (Id: {Id})";
         }
     }
 }
