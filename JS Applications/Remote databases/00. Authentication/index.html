@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Remote Databases</title>
+    <link rel="stylesheet" href="./styles.css">
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/8.0.1/firebase-app.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use -->
+    <script src="https://www.gstatic.com/firebasejs/8.0.1/firebase-auth.js"></script>
+</head>
+
+<body>
+    <div class="login-details">
+        <h2>ENTER YOUR LOGIN DETAILS</h2>
+        <div id="login-data">
+            <input type="text" id="username" class="login-input" placeholder="Email">
+            <input type="password" id="password" class="login-input" placeholder="Password">
+            <button class="login" id="loginBtn">Login</button>
+        </div>
+        <hr>
+        <span class="text">Don't have account?</span>
+        <button class="login" id="registerBtn">Register</button>
+    </div>
+    <div class="content">        
+        <div class="contentData">
+            <span>Books</span>
+            <a href="../01. BOOKS/index.html" class="buttonLink" id="books" target="_blank"></a>
+        </div>
+        <div class="contentData">
+            <span>Students</span>
+            <a href="../02. STUDENTS/index.html" class="buttonLink" id="students" target="_blank"></a>
+        </div>
+        <div class="contentData">
+            <span>Game</span>
+            <a href="../03. WILD-WILD-WEST/west.html" class="buttonLink" id="game" target="_blank"></a>
+        </div>
+    </div>
+    <script src="./config.js"></script>
+    <script src="./auth.js"></script>
+</body>
+
+</html>
