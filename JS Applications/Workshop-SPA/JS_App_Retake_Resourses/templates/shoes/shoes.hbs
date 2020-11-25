@@ -1,0 +1,11 @@
+{{> header}}
+<div class="shoes container">
+    {{#if shoes}}
+        {{#each shoes}}
+        {{> shoe}}
+        {{/each}}
+    {{else}}
+    No shoes to display. Be the first to create a new offer...
+    {{/if}}
+</div>
+{{> footer}}
