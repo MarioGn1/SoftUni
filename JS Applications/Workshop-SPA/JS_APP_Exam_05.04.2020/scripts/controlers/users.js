@@ -29,14 +29,17 @@ export function logout(context) {
 export function registerPost(context) {
 
     const { email, password, repeatPassword } = context.params;
+
     if (password !== repeatPassword) {
         regLoginFail();
     } else {
+
         auth.createUserWithEmailAndPassword(email, password)
             .then((res) => {
-                console.log(res);
+              
                 successfullOperation('You succesfully create account!');
-                context.redirect('#/home');
+
+                context.redirect('#/login');
             })
             .catch(error => {
                 regLoginFail(error);
