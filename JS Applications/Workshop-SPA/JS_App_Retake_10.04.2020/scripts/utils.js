@@ -12,11 +12,15 @@ function checkForLoggedUser(context) {
     }
 };
 
- function loadPartials(context) {
-    return context.loadPartials({
-        'header': '../templates/partials/header.hbs',
-        'footer': '../templates/partials/footer.hbs'
-    })
+async function loadPartials(context) {
+    const partials = await Promise.all([
+        context.load('../templates/partials/header.hbs'),
+        context.load('../templates/partials/footer.hbs')
+    ])
+    context.partials = {
+        'header': partials[0],
+        'footer': partials[1]
+    }
 };
 
 function successfullOperation(message) {
@@ -24,7 +28,7 @@ function successfullOperation(message) {
     infoEl.style.display = 'block';
     setTimeout(() => {
         infoEl.style.display = 'none';
-    }, 2000);
+    }, 1000);
 }
 
 function errorCatch(error) {
@@ -36,7 +40,7 @@ function errorCatch(error) {
     errorEl.style.display = 'block';
     setTimeout(() => {
         errorEl.style.display = 'none';
-    }, 3000);
+    }, 1000);
 }
 
 function regLoginFail(error) {
@@ -51,33 +55,28 @@ function regLoginFail(error) {
     }
 }
 
-function loadContentData(context, id) {
-    getData(id)
-        .then((response) => {
+async function loadContentData(context, id) {
+    const response = await getData(id);
 
-            setContextData(context, response);
+    setContextData(context, response);
 
-            if (response.data().author === context.username) {
-                context.isAuthor = true;
-            }
-            // if (response.data().likers.find(name => name === context.username)) {
-            //     context.isLiked = true;
-            // }
-            
-            loadPartials(context)
-                .then(function () {
-                    this.partial('../templates/details.hbs')
-                });
-        })
+    if (response.data().author === context.username) {
+        context.isAuthor = true;
+    }
+    // if (response.data().likers.find(name => name === context.username)) {
+    //     context.isLiked = true;
+    // }
+
+    await loadPartials(context);
+    context.partial('../templates/details.hbs');
 }
 
 function getData(id) {
-    
     return db.collection("blogPosts").doc(id)
         .get()
 }
 
-function setContextData(context, sorce) {    
+function setContextData(context, sorce) {
     context.title = sorce.data().title;
     context.category = sorce.data().category;
     context.content = sorce.data().content;

@@ -21,17 +21,14 @@ export function create(context) {
     }
 };
 
-export function edit(context) {
+export async function edit(context) {
     let contentId = this.params.id;
     checkForLoggedUser(context);
-    getData(contentId)
-        .then(data => {
-            setContextData(context, data)
-            loadPartials(context)
-                .then(function () {
-                    this.partial('../templates/edit.hbs')
-                });
-        })
+    const data = await getData(contentId)
+    setContextData(context, data)
+    await loadPartials(context)
+    this.partial('../templates/edit.hbs')
+
 };
 
 export function editPost(context) {
@@ -47,12 +44,12 @@ export function editPost(context) {
     context.redirect(`#/home`)
 };
 
-export function del(context){
+export function del(context) {
     let id = this.params.id;
-
-    db.collection('blogPosts')
-    .doc(id)
-    .delete()
-    .then(() => context.redirect('#/home'))
-    .catch(error => regLoginFail(error));        
+    try {
+        db.collection('blogPosts').doc(id).delete()
+    } catch (error) {
+        regLoginFail(error);
+    }
+    context.redirect('#/home');
 }

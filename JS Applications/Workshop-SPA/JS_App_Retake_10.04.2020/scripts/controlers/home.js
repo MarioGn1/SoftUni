@@ -1,27 +1,22 @@
-import { checkForLoggedUser, db } from '../utils.js';
+import { checkForLoggedUser, db, loadPartials } from '../utils.js';
 
-export function home(context) {
+export async function home(context) {
     checkForLoggedUser(context);
 
     let blogPosts = [];
-    db.collection('blogPosts').get().then(data => {
-        data.forEach(post => {
-            blogPosts.push({
-                title: post.data().title,
-                category: post.data().category,
-                content: post.data().content,
-                isAuthor: post.data().author === context.username ? true : false,
-                id: post.id,
-            })
+    let data = await db.collection('blogPosts').get()
+    data.forEach(post => {
+        blogPosts.push({
+            title: post.data().title,
+            category: post.data().category,
+            content: post.data().content,
+            isAuthor: post.data().author === context.username ? true : false,
+            id: post.id,
         })
+    })
 
-        this.loadPartials({
-            'post': '../templates/partials/post.hbs',
-            'header': '../templates/partials/header.hbs',
-            'footer': '../templates/partials/footer.hbs'
-        })
-            .then(function () {
-                this.partial('../templates/home.hbs', { blogPosts });
-            })
-    });
+    await loadPartials(context)
+    const partialPost = await context.load('../templates/partials/post.hbs');
+    context.partials.post = partialPost;
+    this.partial('../templates/home.hbs', { blogPosts });
 }

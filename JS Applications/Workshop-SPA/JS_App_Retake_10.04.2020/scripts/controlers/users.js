@@ -1,19 +1,18 @@
 import { checkForLoggedUser, loadPartials, successfullOperation, auth, regLoginFail } from '../utils.js';
 
-export function login (context) {
+export async function login(context) {
     checkForLoggedUser(context);
-    loadPartials(context)
-        .then(function () {
-            this.partial('../templates/login.hbs')
-        });
+    await loadPartials(context);
+
+    this.partial('../templates/login.hbs')
+
 }
 
-export function register(context) {
+export async function register(context) {
     checkForLoggedUser(context);
-    loadPartials(context)
-        .then(function () {
-            this.partial('../templates/register.hbs')
-        });
+    await loadPartials(context);
+    this.partial('../templates/register.hbs')
+
 }
 
 export function logout(context) {
