@@ -1,0 +1,21 @@
+{{>header}}
+<section id="viewCatalog" class="background-img">
+    {{#if loggedUser}}
+    <div class="added-destinations">
+        {{#if destinations}}
+        {{#each destinations}}
+        {{>destination}}
+        {{/each}}
+        {{else}}
+        <div class="guest">
+            No destinations yet! Be the first to create one!
+        </div>
+        {{/if}}
+    </div>
+    {{else}}
+    <div class="guest">
+        No destinations possible! Please sign in...
+    </div>
+    {{/if}}
+</section>
+{{>footer}}

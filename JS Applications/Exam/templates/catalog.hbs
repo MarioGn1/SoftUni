@@ -1,0 +1,14 @@
+{{>header}}
+<section id="viewMydestinations">
+    <h3>Your destinations</h3>
+    {{#if ownDestinations}}
+    {{#each ownDestinations}}
+    {{>ownDestination}}
+    {{/each}}
+    {{else}}
+    <div>
+        You still don't have your own destinations. Go and create one!
+    </div>
+    {{/if}}
+</section>
+{{>footer}}
