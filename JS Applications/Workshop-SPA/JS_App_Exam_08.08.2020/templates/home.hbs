@@ -1,0 +1,41 @@
+{{> header}}
+<section class="notifications" style="display: none;">
+    <p class="notification-message" id="errorBox">Message...</p>
+</section>
+<section class="notifications" style="display: none;background-color:rgba(1, 131, 29, 0.541);">
+    <p class="notification-message" id="successBox">Message...</p>
+</section>
+
+
+<div class="jumbotron jumbotron-fluid text-light" style="background-color: #343a40;">
+    <img src="https://s.studiobinder.com/wp-content/uploads/2019/06/Best-M-Night-Shyamalan-Movies-and-Directing-Style-StudioBinder.jpg"
+        class="img-fluid" alt="Responsive image">
+    <h1 class="display-4">Movies</h1>
+    <p class="lead">Unlimited movies, TV shows, and more. Watch anywhere. Cancel anytime.</p>
+</div>
+{{#if loggedUser}}
+<h1 class="text-center">Movies</h1>
+<section>
+    <a href="#/add" class="btn btn-warning ">Add Movie</a>
+    <form class="search float-right">
+        <label>Search: </label>
+        <input type="text">
+        <input type="submit" class="btn btn-info" value="Search">
+    </form>
+</section>
+
+<div class=" mt-3 ">
+    <div class="row d-flex d-wrap">
+        {{#if movies}}
+        <div class="card-deck d-flex justify-content-center">
+            {{#each movies}}
+            {{> movieCard}}
+            {{/each}}
+        </div>
+        {{else}}
+        <p><strong>No movies found...</strong></p>
+        {{/if}}
+    </div>
+</div>
+{{/if}}
+{{> footer}}

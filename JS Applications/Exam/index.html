@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Destinations</title>
+    <link rel="stylesheet" href="static/css/style.css">
+
+    <!-- Firebase -->
+    <script src="https://www.gstatic.com/firebasejs/8.0.2/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.0.2/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.0.2/firebase-firestore.js"></script>
+
+    <!-- Modules -->
+    <script src="./node_modules/jquery/dist/jquery.js"></script>
+    <script src="./node_modules/handlebars/dist/handlebars.js"></script>
+    <script src="./node_modules/sammy/lib/sammy.js"></script>
+    <script src="./node_modules/sammy/lib/plugins/sammy.handlebars.js"></script>
+
+    <!-- Scripts -->
+    <script src="/scripts/config.js"></script>
+    <script src="/scripts/app.js" type="module"></script>
+</head>
+
+<body>
+    <!-- Notifications -->
+    <div>
+        <div class="notification loadingBox" id="loadingBox">
+            Loading …
+        </div>
+        <div class="notification infoBox" id="infoBox">
+            Info
+        </div>
+        <div class="notification errorBox" id="errorBox">
+            Error: destination name can't be empty!
+        </div>
+    </div>
+    <div id="container">
+    </div>
+
+</body>
+
+</html>
