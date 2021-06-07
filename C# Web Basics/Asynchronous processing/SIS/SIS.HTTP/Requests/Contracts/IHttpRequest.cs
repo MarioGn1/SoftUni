@@ -1,6 +1,9 @@
 ﻿using System.Collections.Generic;
+using SIS.HTTP.Cookies.Contracts;
 using SIS.HTTP.Enums;
 using SIS.HTTP.Headers.Contracts;
+using SIS.HTTP.Sessions;
+using SIS.HTTP.Sessions.Contracts;
 
 namespace SIS.HTTP.Requests.Contracts
 {
@@ -17,5 +20,9 @@ namespace SIS.HTTP.Requests.Contracts
         IHttpHeaderCollection Headers { get; }
 
         HttpRequestMethod RequestMethod { get; }
+
+        IHttpCookieCollection Cookies { get; }
+
+        IHttpSession Session { get; set; }
     }
 }

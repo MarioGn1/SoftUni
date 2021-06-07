@@ -3,11 +3,13 @@ using System.Net.Sockets;
 using System.Text;
 using System.Threading.Tasks;
 using SIS.HTTP.Common;
+using SIS.HTTP.Cookies;
 using SIS.HTTP.Enums;
 using SIS.HTTP.Exceptions;
 using SIS.HTTP.Requests;
 using SIS.HTTP.Requests.Contracts;
 using SIS.HTTP.Responses.Contracts;
+using SIS.HTTP.Sessions;
 using SIS.WebServer.Result;
 using SIS.WebServer.Routing.Contracts;
 
@@ -26,6 +28,33 @@ namespace SIS.WebServer
 
             this.client = client;
             this.serverRoutingTable = serverRoutingTable;
+        }
+
+        private string SetRequestSession(IHttpRequest httpRequest)
+        {
+            string sessionId = null;
+
+            if (httpRequest.Cookies.ContainsCookie(HttpSessionStorage.SessionCookieKey))
+            {
+                var cookie = httpRequest.Cookies.GetCookie(HttpSessionStorage.SessionCookieKey);
+                sessionId = cookie.Value;
+                httpRequest.Session = HttpSessionStorage.GetSession(sessionId);
+            }
+            else
+            {
+                sessionId = Guid.NewGuid().ToString();
+                httpRequest.Session = HttpSessionStorage.GetSession(sessionId);
+            }
+
+            return sessionId;
+        }
+
+        private void SetResponseSession(IHttpResponse httpResponse, string sessionId)
+        {
+            if (sessionId != null)
+            {
+                httpResponse.AddCookie(new HttpCookie(HttpSessionStorage.SessionCookieKey, sessionId));
+            }
         }
 
         private async Task<IHttpRequest> ReadRequest()
@@ -91,7 +120,11 @@ namespace SIS.WebServer
                 {
                     Console.WriteLine($"Processing: {httpRequest.RequestMethod} {httpRequest.Path}...");
 
+                    var sessionId = this.SetRequestSession(httpRequest);
+
                     httpResponse = this.HandleRequest(httpRequest);
+
+                    this.SetResponseSession(httpResponse, sessionId);
 
                     await this.PrepareResponse(httpResponse);
                 }
