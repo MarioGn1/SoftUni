@@ -15,8 +15,8 @@ namespace WebServer
             await new HttpServer("127.0.0.1", 8080,
                 routes => routes
                     .MapGet("/", new TextResponse("Hello from Mario!"))
-                    .MapGet("/Dogs", new TextResponse("<h1>Hello from the dogs!</h1>", "text/html"))
-                    .MapGet("/Cats", new TextResponse("<h1>Hello from the cats!</h1>", "text/html")))
+                    .MapGet("/Dogs", new HtmlResponse("<h1>Hello from the dogs!</h1>"))
+                    .MapGet("/Cats", new HtmlResponse("<h1>Hello from the cats!</h1>")))
                 .Start();            
         }
     }
