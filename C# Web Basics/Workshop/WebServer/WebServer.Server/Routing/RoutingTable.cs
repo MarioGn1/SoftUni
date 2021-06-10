@@ -21,36 +21,37 @@ namespace WebServer.Server.Routing
             };
         }
 
-        public IRoutingTable Map(string url, HttpMethod method, HttpResponse response)
+        public IRoutingTable Map(HttpMethod method, string path, HttpResponse response)
         {
-            return method switch
-            {
-                HttpMethod.GET => this.MapGet(url, response),
-                _ => throw new InvalidOperationException("Request is not Valid."),
-            };
-        }
-
-        public IRoutingTable MapGet(string url, HttpResponse response)
-        {
-            Validator.AgainstNull(url, nameof(url));
+            Validator.AgainstNull(path, nameof(path));
             Validator.AgainstNull(response, nameof(response));
 
-            this.routes[HttpMethod.GET][url] = response;
+            this.routes[HttpMethod.GET][path] = response;
 
             return this;
+        }
+
+        public IRoutingTable MapGet(string path, HttpResponse response)
+        {
+            return Map(HttpMethod.GET, path, response);
+        }
+
+        public IRoutingTable MapPost(string path, HttpResponse response)
+        {
+            return Map(HttpMethod.POST, path, response);
         }
 
         public HttpResponse MatchRequest(HttpRequest request)
         {
             var requestMethod = request.Method;
-            var requestUrl = request.Url;
+            var requestPath = request.Path;
 
-            if (!this.routes.ContainsKey(requestMethod) || !this.routes[requestMethod].ContainsKey(requestUrl))
+            if (!this.routes.ContainsKey(requestMethod) || !this.routes[requestMethod].ContainsKey(requestPath))
             {
                 return new NotFoundResponse();
             }
 
-            return this.routes[requestMethod][requestUrl];
+            return this.routes[requestMethod][requestPath];
         }
     }
 }

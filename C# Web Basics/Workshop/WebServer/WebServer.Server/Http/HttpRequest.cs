@@ -9,9 +9,10 @@ namespace WebServer.Server.Http
         private const string NewLine = "\r\n";
 
         public HttpMethod Method { get; private set; }
-        public string Url { get; private set; }
+        public string Path { get; private set; }
         public string Body { get; private set; }
         public HttpHeaderCollection Headers { get; private set; }
+        public Dictionary<string, string> Query;
 
         public static HttpRequest Parse(string request)
         {
@@ -23,6 +24,8 @@ namespace WebServer.Server.Http
 
             var url = startLine[1];
 
+            var (path, query) = ParseUrl(url);
+
             var headers = ParseHttpHeaders(lines.Skip(1));
 
             var bodyLines = lines.Skip(headers.Count + 2).ToArray();
@@ -32,7 +35,8 @@ namespace WebServer.Server.Http
             return new HttpRequest
             {
                 Method = method,
-                Url = url,
+                Path = path,
+                Query = query,
                 Headers = headers,
                 Body = body
             };
@@ -51,7 +55,7 @@ namespace WebServer.Server.Http
 
                 var headerParts = headerLine.Split(":", 2);
 
-                if (headerParts.Length !=2)
+                if (headerParts.Length != 2)
                 {
                     throw new InvalidOperationException("Request is not Valid.");
                 }
@@ -75,6 +79,25 @@ namespace WebServer.Server.Http
                 "DELETE" => HttpMethod.DELETE,
                 _ => throw new InvalidOperationException($"Method {method} is not supported.")
             };
+        }
+
+        private static (string, Dictionary<string, string>) ParseUrl(string url)
+        {
+            var urlParts = url.Split('?', 2);
+
+            var path = urlParts[0];
+            var query = urlParts.Length > 1 ? ParseQuery(urlParts[1]) : new Dictionary<string, string>();
+
+            return (path, query);
+        }
+
+        private static Dictionary<string, string> ParseQuery(string queryString)
+        {
+            return queryString
+                .Split('&')
+                .Select(part => part.Split('='))
+                .Where(part => part.Length == 2)
+                .ToDictionary(part => part[0], part => part[1]);
         }
     }
 }
