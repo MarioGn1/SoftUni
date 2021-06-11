@@ -33,7 +33,7 @@ namespace WebServer.Server.Routing
             Validator.AgainstNull(path, nameof(path));
             Validator.AgainstNull(responseFunction, nameof(responseFunction));
 
-            this.routes[HttpMethod.GET][path] = responseFunction;
+            this.routes[HttpMethod.GET][path.ToLower()] = responseFunction;
 
             return this;
         }
@@ -53,7 +53,7 @@ namespace WebServer.Server.Routing
         public HttpResponse ExecuteRequest(HttpRequest request)
         {
             var requestMethod = request.Method;
-            var requestPath = request.Path;
+            var requestPath = request.Path.ToLower();
 
             if (!this.routes.ContainsKey(requestMethod) || !this.routes[requestMethod].ContainsKey(requestPath))
             {

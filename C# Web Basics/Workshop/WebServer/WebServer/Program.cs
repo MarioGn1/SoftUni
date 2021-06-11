@@ -17,6 +17,8 @@ namespace WebServer
             await new HttpServer("127.0.0.1", 8080,
                 routes => routes
                     .MapGet<HomeController>("/", c => c.Index())
+                    .MapGet<HomeController>("/ToCats", c => c.LocalRedirect())
+                    .MapGet<HomeController>("/softuni", c => c.ToSoftUni())
                     .MapGet<AnimalsController>("/Dogs", c => c.Dogs())
                     .MapGet<AnimalsController>("/Cats", c => c.Cats()))
                 .Start();
