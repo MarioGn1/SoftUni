@@ -3,7 +3,9 @@ using System.Net;
 using System.Net.Sockets;
 using System.Text;
 using System.Threading.Tasks;
+using WebServer.Controllers;
 using WebServer.Server;
+using WebServer.Server.Controllers;
 using WebServer.Server.Results;
 
 namespace WebServer
@@ -14,20 +16,9 @@ namespace WebServer
         {
             await new HttpServer("127.0.0.1", 8080,
                 routes => routes
-                    .MapGet("/", new TextResponse("Hello from Mario!"))
-                    .MapGet("/Dogs", new HtmlResponse("<h1>Hello from the dogs!</h1>"))
-                    .MapGet("/Cats", request =>
-                    {
-                        const string nameKey = "Name";
-                        
-                        var query = request.Query;
-
-                        var catName = query.ContainsKey(nameKey) ? query[nameKey] : "the cats";
-
-                        var result = $"<h1>Hello from {catName}!</h1>";
-
-                        return new HtmlResponse(result);
-                    }))
+                    .MapGet<HomeController>("/", c => c.Index())
+                    .MapGet<AnimalsController>("/Dogs", c => c.Dogs())
+                    .MapGet<AnimalsController>("/Cats", c => c.Cats()))
                 .Start();
         }
     }
