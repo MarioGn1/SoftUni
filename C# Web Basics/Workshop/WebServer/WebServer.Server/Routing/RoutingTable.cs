@@ -33,7 +33,7 @@ namespace WebServer.Server.Routing
             Validator.AgainstNull(path, nameof(path));
             Validator.AgainstNull(responseFunction, nameof(responseFunction));
 
-            this.routes[HttpMethod.GET][path.ToLower()] = responseFunction;
+            this.routes[method][path.ToLower()] = responseFunction;
 
             return this;
         }
