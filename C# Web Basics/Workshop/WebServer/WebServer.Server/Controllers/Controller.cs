@@ -21,7 +21,13 @@ namespace WebServer.Server.Controllers
             => new RedirectResponse(location);
 
         protected HttpResponse View([CallerMemberName] string viewName = "")
-            => new ViewResponse(viewName, GetControlerName());
+            => new ViewResponse(viewName, GetControlerName(), null);
+
+        protected HttpResponse View(string viewName, object model)
+            => new ViewResponse(viewName, GetControlerName(), model);
+
+        protected HttpResponse View(object model, [CallerMemberName] string viewName = "")
+            => new ViewResponse(viewName, GetControlerName(), model);
 
         private string GetControlerName()
             => this.GetType().Name.Replace(nameof(Controller), string.Empty);
