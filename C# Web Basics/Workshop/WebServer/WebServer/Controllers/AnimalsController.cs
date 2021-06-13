@@ -6,7 +6,7 @@ namespace WebServer.Controllers
     public class AnimalsController : Controller
     {
 
-        public AnimalsController(HttpRequest request) 
+        public AnimalsController(HttpRequest request)
             : base(request)
         {
         }
@@ -24,7 +24,8 @@ namespace WebServer.Controllers
             return Html(result);
         }
 
-        public HttpResponse Dogs()
-            => Html("<h1>Hello from the dogs!</h1>");
+        public HttpResponse Dogs() => View();
+        public HttpResponse Bunnies() => View("Rabbits");
+        public HttpResponse Turtles() => View("Animals/Wild/Turtles");
     }
 }
