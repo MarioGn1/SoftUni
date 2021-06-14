@@ -2,9 +2,9 @@
 
 namespace WebServer.Server.Results
 {
-    public class BadRequestResponse : HttpResponse
+    public class BadRequestResult : HttpResponse
     {
-        public BadRequestResponse() 
+        public BadRequestResult() 
             : base(HttpStatusCode.BadRequest)
         {
         }
