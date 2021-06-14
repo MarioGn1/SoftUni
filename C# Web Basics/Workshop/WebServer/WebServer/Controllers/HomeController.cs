@@ -1,4 +1,5 @@
-﻿using WebServer.Server.Controllers;
+﻿using System;
+using WebServer.Server.Controllers;
 using WebServer.Server.Http;
 
 namespace WebServer.Controllers
@@ -18,5 +19,7 @@ namespace WebServer.Controllers
 
         public HttpResponse ToSoftUni()
             => Redirect("https://softuni.bg");
+
+        public HttpResponse Error() => throw new InvalidOperationException("Invalid action!");
     }
 }

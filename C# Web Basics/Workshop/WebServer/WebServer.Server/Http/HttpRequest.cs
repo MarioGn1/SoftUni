@@ -6,6 +6,7 @@ namespace WebServer.Server.Http
 {
     public class HttpRequest
     {
+        private static Dictionary<string, HttpSession> Sessions = new();
         private const string NewLine = "\r\n";
 
         public HttpMethod Method { get; private set; }
@@ -15,6 +16,7 @@ namespace WebServer.Server.Http
         public IReadOnlyDictionary<string, HttpCookie> Cookies { get; private set; }
         public IReadOnlyDictionary<string, string> Query { get; private set; }
         public IReadOnlyDictionary<string, string> Form { get; private set; }
+        public HttpSession Session { get; private set; }
 
         public static HttpRequest Parse(string request)
         {
@@ -32,6 +34,8 @@ namespace WebServer.Server.Http
 
             var cookies = ParseCookies(headers);
 
+            var session = GetSession(cookies);
+
             var bodyLines = lines.Skip(headers.Count + 2).ToArray();
 
             var body = string.Join(string.Empty, bodyLines);
@@ -45,9 +49,22 @@ namespace WebServer.Server.Http
                 Query = query,
                 Headers = headers,
                 Cookies = cookies,
+                Session = session,
                 Body = body,
                 Form = form
             };
+        }
+
+        private static HttpSession GetSession(Dictionary<string, HttpCookie> cookies)
+        {
+            var sessionId = cookies.ContainsKey(HttpSession.SessionCookieName) ? cookies[HttpSession.SessionCookieName].Value : Guid.NewGuid().ToString();
+
+            if (!Sessions.ContainsKey(sessionId))
+            {
+                Sessions[sessionId] = new HttpSession(sessionId);
+            }
+
+            return Sessions[sessionId];
         }
 
         private static Dictionary<string, HttpHeader> ParseHeaders(IEnumerable<string> headerLines)
@@ -130,7 +147,7 @@ namespace WebServer.Server.Http
         {
             var result = new Dictionary<string, string>();
 
-            if (headers.ContainsKey(HttpHeader.ContentType) 
+            if (headers.ContainsKey(HttpHeader.ContentType)
                 && headers[HttpHeader.ContentType].Value == HttpContentType.FormUrlEncoded)
             {
                 result = ParseQuery(body);

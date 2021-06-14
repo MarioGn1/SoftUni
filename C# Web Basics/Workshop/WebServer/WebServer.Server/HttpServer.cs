@@ -48,14 +48,51 @@ namespace WebServer.Server
 
                 var requestText = await ReadRequest(networkStream);
 
-                var request = HttpRequest.Parse(requestText);
+                try
+                {
+                    var request = HttpRequest.Parse(requestText);
 
-                var response = this.routingTable.ExecuteRequest(request);
+                    var response = this.routingTable.ExecuteRequest(request);
 
-                await WriteResponce(networkStream, response);
+                    this.PrepareSession(request, response);
+
+                    this.LogPipeline(request, response);
+
+                    await WriteResponce(networkStream, response);
+                }
+                catch (Exception exception)
+                {
+                    await HandleError(networkStream, exception);
+                }
+
 
                 connection.Close();
             }
+        }
+
+        private void LogPipeline(HttpRequest request, HttpResponse response)
+        {
+            var separator = new string('-', 50);
+            var sb = new StringBuilder();
+            sb.AppendLine();
+            sb.AppendLine(separator);
+
+            sb.AppendLine("REQUEST:");
+            sb.AppendLine(request.ToString());
+
+            sb.AppendLine();
+
+            sb.AppendLine("RESPONSE:");
+            sb.AppendLine(response.ToString());
+
+            sb.AppendLine();
+
+            Console.WriteLine(sb.ToString());
+        }
+
+        private void PrepareSession(HttpRequest request, HttpResponse response)
+        {
+            response.AddCookie(HttpSession.SessionCookieName, request.Session.Id);
         }
 
         private async Task<string> ReadRequest(NetworkStream networkStream)
@@ -73,6 +110,13 @@ namespace WebServer.Server
             } while (networkStream.DataAvailable);
 
             return requestBuilder.ToString();
+        }
+
+        private async Task HandleError(NetworkStream networkStream, Exception exception)
+        {
+            var errorMessage = $"{exception.Message}{Environment.NewLine}{exception.StackTrace}";
+            var errorResponse = HttpResponse.ForError(errorMessage);
+            await WriteResponce(networkStream, errorResponse);
         }
 
         private async Task WriteResponce(NetworkStream networkStream, HttpResponse response)
