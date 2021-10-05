@@ -1,0 +1,22 @@
+@import url("https://use.fontawesome.com/releases/v5.10.2/css/all.css");
+
+a {
+    outline: none;
+    font-size: 10pt;    
+    padding: 5px;
+    margin: 5px;
+    color: white;
+    text-decoration: none;
+}
+
+#click {
+    background-color: green;
+}
+
+#mail {
+    background-color: orange;
+}
+
+i{
+    margin: 2px;
+}
