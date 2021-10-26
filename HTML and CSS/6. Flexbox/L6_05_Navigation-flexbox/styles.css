@@ -1,0 +1,45 @@
+*,
+*::before,
+*::after{
+    box-sizing: border-box;
+}
+
+html{
+    font-family: Helvetica, sans-serif;
+    padding: 40px;
+}
+
+header{
+    border-bottom: 2px solid rgb(0,0,0);
+    display: flex;
+    justify-content: space-between;
+}
+
+header p{
+    font-size: 26px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+nav ul{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    list-style-type: none;
+}
+
+nav ul li{
+    margin-left: 20px;
+}
+
+a{
+    text-decoration: none;
+    color:rgb(0, 153, 0);    
+}
+
+h1{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-weight: normal;
+    font-size: 20px;
+}
+

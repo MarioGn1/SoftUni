@@ -1,0 +1,47 @@
+*,
+*::before,
+*::after{
+    box-sizing: border-box;
+}
+
+html{
+    font-family: Helvetica, sans-serif;
+}
+
+body{
+    display: flex;
+    background-color: rgb(238, 238, 238);
+    height: 100vh;
+    flex-direction: column;
+    justify-content: space-between;
+    margin: 0;
+}
+
+header{
+    border-bottom: 3px solid black; 
+}
+
+header p{
+    font-size: 26px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+main{
+    flex-grow: 1;
+}
+
+footer{
+    color: rgb(255, 255, 255);
+    background-color: rgb(102, 102, 102);
+}
+
+p{
+    margin-left: 20px;
+}
+
+h2{
+    font-weight: normal;
+    margin-left: 20px;
+    font-family: serif;
+}

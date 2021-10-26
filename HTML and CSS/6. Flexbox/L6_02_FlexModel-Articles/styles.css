@@ -1,0 +1,38 @@
+*,
+*::before,
+*::after{
+    box-sizing: border-box;
+}
+
+html{
+    font-family: Helvetica, sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+    height: 100%;
+}
+
+body{
+    height: 100%;
+}
+
+h2{
+    font-family: Georgia, serif;
+    font-size: 1em;
+    line-height: 1.2;
+}
+
+section{
+    display: flex;
+    justify-content: space-between;
+    max-width: 70vw;
+    margin: 0 auto;
+    align-items: stretch;
+    height: 100%;
+    position: relative;
+    top: 30%;
+}
+
+article{
+    width: 30%;
+    padding: 5px;
+}

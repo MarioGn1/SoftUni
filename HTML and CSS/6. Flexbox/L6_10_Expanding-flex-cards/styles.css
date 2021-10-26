@@ -1,0 +1,36 @@
+*,
+*::before,
+*::after{
+    box-sizing: border-box;
+}
+
+body, .container{
+    display: flex;
+}
+
+body{
+    background-color: rgb(238,238,238);
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+}
+
+.container{
+    justify-content: space-evenly;
+    max-width: 60%;
+    height: 35%;
+}
+
+.card{
+    display: flex;
+    flex: 0 1 10%;
+    justify-content: center;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 0 2em rgba(0,0,0,0.25);  
+}
+
+.container :nth-child(2){
+    flex: 0 1 60%;
+    background-color: black;
+}

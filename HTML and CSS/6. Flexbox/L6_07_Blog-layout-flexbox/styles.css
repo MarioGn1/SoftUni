@@ -1,0 +1,89 @@
+*,
+*::before,
+*::after{
+    box-sizing: border-box;
+}
+
+.page{
+    display: flex;
+    flex-wrap: wrap;
+    margin: 60px auto;
+    max-width: 90%;    
+}
+
+body{
+    background-color: rgb(238, 238, 238);
+}
+
+img{
+    background-color: rgb(255, 255, 255);
+    border: 3px solid black;
+    box-shadow: 0 0 2em rgba(0,0,0,0.25);
+    padding: 5px;
+}
+
+blockquote{
+    font-family: Georgia, serif;
+    float: right;
+    margin-left: 20px;
+    border-left: 3px solid grey;
+    padding-left: 20px;
+    max-width: 40%;
+    opacity: 0.5;
+    font-style: italic;
+    line-height: 2;
+}
+
+blockquote :last-child{
+    text-align: right;
+}
+
+blockquote p{
+    margin: 0;
+}
+
+aside a{
+    color: rgb(0, 153, 0);
+    text-decoration: none;
+}
+
+.page h1,h2,h3{
+    font-family: Georgia, serif;
+    font-weight: normal;
+}
+
+.page header{
+    font-family: sans-serif;
+    border-bottom: 3px solid black; 
+    flex-basis: 100%;   
+}
+
+.page section{
+    max-width: 80%;
+    margin-right: 40px;
+}
+
+.page aside{
+    max-width: 20%;
+}
+
+header p{
+    font-size: 26px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+p{
+    font-family: Helvetica, sans-serif;
+}
+
+.right{
+    float: right;
+    margin-left: 20px;
+}
+
+.left{
+    float: left;
+    margin-right: 20px;
+}
+
