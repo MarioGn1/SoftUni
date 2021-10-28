@@ -83,6 +83,7 @@ header{
 
 .navbar-footer p{
     text-align: center;
+    line-height: 2;
 }
 
 .navbar-footer a{
@@ -133,6 +134,76 @@ header{
     line-height: 1.5;
     font-size: 14;
 }
+
+.subcontent{
+    text-align: center;
+    padding: 50px 160px;
+}
+
+.subcontent-title{
+    font-size: 32px;
+    margin: 0;
+    font-weight: normal;
+}
+
+.subcontent-text{
+    margin: 0 0 40px 0;
+    color: rgb(192, 192, 192);
+}
+
+.btn{
+    background-color: #1B9772;
+    border: none;
+    padding: 20px 50px;
+    color: white;
+    letter-spacing: 2px;
+}
+
+footer{
+    display: flex;
+    flex-direction: column;
+}
+
+.footer-content{
+    background-color: #383838;
+    display: flex;
+    justify-content: space-between;
+    padding: 40px 40px;
+}
+
+.footer-content-card{
+    text-align: center;
+    padding: 0 20px;
+}
+
+.footer-content-card h4{
+    color: #E3E5EF;
+    font-size: 20px;
+}
+
+.footer-content-card p{
+    color: grey;
+    line-height: 2;
+    font-size: 12px;
+}
+
+.footer-subfooter{
+    background-color: #1B9772;
+    text-align: center;
+    padding: 60px 0;
+}
+
+.footer-subfooter p{
+    color: rgb(200, 200, 200);
+    letter-spacing: 1.5px;
+    font-size: 14px;
+}
+
+.footer-subfooter strong{
+    color: rgb(231, 231, 231);
+}
+
+
 
 
 
