@@ -46,6 +46,7 @@ header{
 .navbar-menu-item a{
     text-decoration: none;
     color: #54546D;
+    font-weight: bold;
 }
 
 .navbar-content{
