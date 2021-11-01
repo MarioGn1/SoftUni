@@ -1,0 +1,22 @@
+html{
+    font-family: Helvetica, sans-serif;
+}
+
+body{
+    background-color: rgb(238, 238, 238);
+    color: rgb(51, 51, 51);
+}
+
+img{
+    width: 40%;
+    max-height: 400px;
+}
+
+aside{
+    float: right;
+    max-width: 20%;
+}
+
+article{
+    max-width: 80%;
+}

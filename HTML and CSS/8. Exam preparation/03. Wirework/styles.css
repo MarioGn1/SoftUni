@@ -1,0 +1,209 @@
+@import url("https://use.fontawesome.com/releases/v5.10.2/css/all.css");
+
+html{
+    font-family: Helvetica, sans-serif;
+}
+
+*,
+*::after,
+*::before{
+    box-sizing: border-box;
+}
+
+body{
+    margin: 0;
+}
+
+header{
+    display: flex;
+    flex-direction: column;
+}
+
+.navbar{
+    display: flex;
+    justify-content: space-between;
+    background-color: #FFFFFF;
+    padding: 0 40px;
+    align-items: center;
+}
+
+.navbar-logo-title{
+    text-transform: uppercase;
+    border-right: 2px solid #D1D1D1;
+    display: inline-block;
+    padding-right: 10px;
+    margin-right: 10px;
+    font-size: 32px;
+}
+
+.navbar-logo-subtitle{
+    color: grey;
+}
+
+.navbar-menu-list{
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar-menu-item{
+    padding: 20px;
+    background-color: #ECECEC;
+    border-right: 2px solid white;
+}
+
+.navbar-menu-item a{
+    text-decoration: none;
+    color: black;    
+}
+
+#home{
+    background-color: #E24E2A;
+    color: white;
+}
+
+#home a{
+    color: white;
+}
+
+.navbar-img img{
+    width: 100%;
+    height: 100%;
+    max-height: 600px;
+    object-fit: cover;
+}
+
+.navbar-footer{
+    background-color: #E24E2A;
+    color: white;
+    margin-top: -10px;
+    padding: 30px 160px;
+}
+
+.navbar-footer p{
+    text-align: center;
+    line-height: 2;
+}
+
+.navbar-footer a{
+    color: white;
+}
+
+.content{
+    background-color: #383838;
+    display: flex;
+    padding: 60px 30px;
+    justify-content: space-between;
+}
+
+.content-card{
+    padding: 0 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;  
+}
+
+.content-card-icon{
+    width: 80px;
+    height: 80px;
+    font-size: 50px;
+    background-color: #E24E2A;
+    position: relative;
+    color: white;
+}
+
+.content-card-icon i{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.content-card-heading{
+    color: white;
+    font-weight: normal;
+}
+
+.content-card-text{
+    text-align: center;
+    color: grey;  
+    border-top: 1px solid grey;   
+    padding: 20px;   
+    line-height: 1.5;
+    font-size: 14;
+}
+
+.subcontent{
+    text-align: center;
+    padding: 50px 160px;
+}
+
+.subcontent-title{
+    font-size: 32px;
+    margin: 0;
+    font-weight: normal;
+}
+
+.subcontent-text{
+    margin: 0 0 40px 0;
+    color: rgb(192, 192, 192);
+}
+
+.btn{
+    background-color: #1B9772;
+    border: none;
+    padding: 20px 50px;
+    color: white;
+    letter-spacing: 2px;
+}
+
+footer{
+    display: flex;
+    flex-direction: column;
+}
+
+.footer-content{
+    background-color: #383838;
+    display: flex;
+    justify-content: space-between;
+    padding: 40px 40px;
+}
+
+.footer-content-card{
+    text-align: center;
+    padding: 0 20px;
+}
+
+.footer-content-card h4{
+    color: #E3E5EF;
+    font-size: 20px;
+}
+
+.footer-content-card p{
+    color: grey;
+    line-height: 2;
+    font-size: 12px;
+}
+
+.footer-subfooter{
+    background-color: #1B9772;
+    text-align: center;
+    padding: 60px 0;
+}
+
+.footer-subfooter p{
+    color: rgb(200, 200, 200);
+    letter-spacing: 1.5px;
+    font-size: 14px;
+}
+
+.footer-subfooter strong{
+    color: rgb(231, 231, 231);
+}
+
+
+
+
+

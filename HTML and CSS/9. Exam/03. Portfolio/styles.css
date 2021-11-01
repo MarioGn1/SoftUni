@@ -1,0 +1,286 @@
+@import url("https://use.fontawesome.com/releases/v5.10.2/css/all.css");
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital@0;1&display=swap');
+
+html{
+    font-family: 'Raleway', sans-serif;
+}
+
+*,
+*::after,
+*::before{
+    box-sizing: border-box;
+}
+
+body{
+    margin: 0;
+}
+
+section{
+    background-color: #EFEFEF;
+    height: 600px;
+    margin: 40px;
+}
+
+.nav{
+    position: relative;   
+}
+
+.nav-menu{
+    position: absolute;
+    margin: 20px;
+    top: 0;
+    right: 0;
+}
+
+.nav-menu ul{
+    list-style: none;
+    display: flex;
+    margin: 0;
+    align-items: center;
+}
+
+.nav-menu li{
+    margin-left: 20px;
+}
+
+.nav-menu a{
+    text-decoration: none;
+    color: black;
+}
+
+.nav-menu i{
+    font-size: 30px;
+}
+
+ p{
+    font-style: italic;
+    line-height: 1.5;
+    font-weight: bold;
+}
+
+.nav-content{
+    width: 40%;
+    margin-left: 100px;
+    position: absolute;
+    top: 20%;
+}
+
+.nav-content::after{
+    content: '';
+    width: 1px;
+    height: 60px;
+    background-color: black;
+    display: block;
+}
+
+ h1{
+    font-weight: normal;
+    font-size: 40px;
+    color: grey;
+}
+
+ h1 strong{
+    color: black;
+}
+
+.nav-img{
+    position: absolute;
+    height: 80%;
+    bottom: 0;
+    right: 0;
+    margin-right: 100px;
+}
+
+.nav-img img{
+    height: 100%;
+}
+
+.photo{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.photo-img{
+    height: 70%;
+    margin-left: 100px;
+}
+
+.photo-img img{
+    height: 100%;
+    margin-left: 40px;
+}
+
+.photo-description{
+    height: 90%;
+    margin: 0 150px 0 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.photo-description h1{
+    margin: 20px 0;
+    display: inline-block;
+    position: relative;
+    padding-left: 100px;
+}
+
+.photo-description h1::before{
+    content: '';
+    width: 60px;
+    height: 1px;
+    background-color: black;
+    position: absolute;
+    display: inline-block;
+    top: 50%;
+    left: 0
+}
+
+.photo-description p{
+    margin: 0;
+    padding: 10px 0;
+}
+
+.photo-description-social{
+    margin: 0;
+    display: flex;
+    align-items: center;
+    height: 8%;
+}
+
+.photo-description-social a{
+    background-color: #909090;
+    height: 70%;
+    width: 5%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    color: white;
+    font-size: 14px;
+    margin-right: 20px;
+    margin-top: 40px;
+}
+
+.photographer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.photographer img{
+    width: 100%;
+}
+
+.bridge{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 40px;
+    position: relative;
+}
+
+.bridge article{
+    width: 40%;
+    height: 90%;
+}
+
+.bridge-content{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.bridge-content::after{
+    content: '';
+    width: 1px;
+    height: 60px;
+    background-color: black;
+    display: block;
+}
+
+.bridge-img{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.bridge-img img{
+    width: 100%;
+    height: 70%;
+}
+
+.pictures{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    padding: 30px;
+}
+
+.pictures :nth-child(1),
+.pictures :nth-child(3){
+    height: 60%;
+    position: absolute;
+}
+
+.pictures :nth-child(1){
+    left: 5%;
+}
+
+.pictures :nth-child(2){
+    height: 80%;
+    z-index: 1;
+}
+
+.pictures :nth-child(3){
+    right: 5%;
+}
+
+.footer{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 40px 150px 10px 150px;
+}
+
+.footer p{
+    text-align: center;    
+}
+
+.footer-form{
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    width: 60%;
+}
+
+.footer-form article{
+    display: flex;
+    justify-content: space-between;
+}
+
+.footer-form article .input{
+    height: 30px;
+    width: 40%;
+}
+
+.input{
+    background-color: inherit;
+    border-radius: 5px;
+    margin-top: 20px;
+    border: 2px solid black;
+    padding: 10px;
+}
+
+#submit{
+    border-radius: 5px;
+    background-color: black;
+    color: white;
+    margin-top: 20px;
+    height: 30px;
+}
+

@@ -1,0 +1,57 @@
+html{
+    font-family: Helvetica, sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+body{
+    margin:0 10% 0 10%;
+    background-color: rgb(238, 238, 238);
+}
+
+header{
+    border-bottom: 3px solid black;
+}
+
+header h1{
+    display: inline-block;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 2rem;
+}
+
+img{
+    padding: 5px;
+    background-color: rgb(255, 255, 255);
+    border: 3px solid black;
+    box-shadow: 0 0 2em rgba(0, 0, 0, 0.25);
+}
+
+.left-image{
+    float: left;
+    margin-right: 20px;
+}
+
+.right-image{
+    float: right;
+    margin-left: 20px;
+}
+
+blockquote, h1, h2, h3{
+    font-family: Georgia, serif;
+}
+
+blockquote{
+    font-style: italic;
+    border-left: 3px solid lightgrey;
+    padding-left: 20px;
+    max-width: 40%;
+    float: right;
+    margin-left: 20px;
+    line-height: 1.5;
+    opacity: 0.5;
+}
+
+blockquote :last-child{
+    text-align: right;
+}

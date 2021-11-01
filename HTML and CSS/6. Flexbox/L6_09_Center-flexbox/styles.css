@@ -1,0 +1,29 @@
+*,
+*::before,
+*::after{
+    box-sizing: border-box;
+}
+
+body{
+    display: flex;
+    background-color: rgb(238, 238, 238);
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.card{
+    background-color: rgb(255, 255, 255);
+    padding: 20px;
+    box-shadow: 0 0 2em rgba(0,0,0,0.25);
+    max-width: 35%;
+    border-radius: 10px;
+}
+
+.card h3{
+    margin: 0;
+}
+
+.card p{
+    font-family: sans-serif;
+}

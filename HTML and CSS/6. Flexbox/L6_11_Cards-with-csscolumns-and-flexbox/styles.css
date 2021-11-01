@@ -1,0 +1,73 @@
+*,
+*::before,
+*::after{
+    box-sizing: border-box;
+}
+
+body{
+    background-color: rgb(238, 238, 238);
+}
+
+.masonry{
+    width: 80%;
+    margin: 0 auto;
+}
+
+.masonry h2{
+    margin: 10px;
+}
+
+.masonry .card{
+    background-color: white;
+    box-shadow: 0 0 2em rgba(0,0,0,0.25);
+    border-radius: 10px;
+    max-width: 100%;
+    margin: 20px 10px 20px 10px;
+}
+
+.masonry .column{
+    display: inline-block;
+    max-width: 33%;
+    vertical-align: top;
+    margin: 0 auto;
+}
+
+.card footer{
+    border-top: 1px solid black;
+    padding-bottom: 10px;
+}
+
+.card img{
+    border-radius: 10px 10px 0 0;
+    width: 100%;
+}
+
+.card h4, p{
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.flex{
+    display: flex;
+    flex-wrap: wrap;
+    width: 80%;
+    margin: 0 auto;
+}
+
+.flex .card{
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    box-shadow: 0 0 2em rgba(0,0,0,0.25);
+    border-radius: 10px;
+    max-width: 30%;
+    margin: 20px 10px 20px 10px;
+}
+
+.flex .card main {
+    flex-grow: 1;
+}
+
+.flex h2{
+    flex-basis: 100%;
+}
